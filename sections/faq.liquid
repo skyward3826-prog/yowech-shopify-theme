@@ -1,0 +1,70 @@
+<section class="faq-section">
+  <div class="container">
+    <header class="section-heading faq-heading">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1>{{ section.settings.heading }}</h1>
+      {% if section.settings.intro != blank %}<p>{{ section.settings.intro }}</p>{% endif %}
+    </header>
+
+    <div class="faq-list">
+      {% for block in section.blocks %}
+        <details class="faq-item" {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.question }}<span aria-hidden="true">+</span></summary>
+          <div class="faq-answer rte">{{ block.settings.answer }}</div>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if section.blocks.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {% for block in section.blocks %}
+      {
+        "@type":"Question",
+        "name":{{ block.settings.question | strip_html | json }},
+        "acceptedAnswer":{"@type":"Answer","text":{{ block.settings.answer | strip_html | json }}}
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "FAQ" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently Asked Questions" },
+    { "type": "textarea", "id": "intro", "label": "Introduction", "default": "Answers to common questions from global B2B buyers." }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "What is your minimum order quantity?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>MOQ varies by product. Contact us with the products and quantities you need, and we will provide the applicable MOQ.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        { "type": "question", "settings": { "question": "What is your minimum order quantity?", "answer": "<p>MOQ varies by product. Contact us with the products and quantities you need, and we will provide the applicable MOQ.</p>" } },
+        { "type": "question", "settings": { "question": "Do you offer OEM and ODM services?", "answer": "<p>Yes. We can support customization of product shape, size, color, material, branding and packaging depending on the project.</p>" } },
+        { "type": "question", "settings": { "question": "Can I request a private label?", "answer": "<p>Yes. Private label options are available for suitable products and order quantities.</p>" } },
+        { "type": "question", "settings": { "question": "Can you supply different silicone product categories?", "answer": "<p>Yes. Our product range covers kitchenware, food storage, baby, pet, household, bathroom, beauty, and outdoor & sports categories.</p>" } },
+        { "type": "question", "settings": { "question": "How can I request a quotation?", "answer": "<p>Use our Request a Quote form and include the products, estimated quantity, target market and customization requirements. Our sales team will follow up with the relevant details.</p>" } },
+        { "type": "question", "settings": { "question": "Do you support international B2B orders?", "answer": "<p>Yes. We work with global wholesalers, retailers, distributors and brands and can discuss shipping and order requirements for your market.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

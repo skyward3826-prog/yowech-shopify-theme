@@ -1,0 +1,68 @@
+<section class="category-section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">PRODUCT RANGE</p>
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.text }}</p>
+    </div>
+
+    <div class="category-grid">
+      {% for block in section.blocks %}
+        {% assign collection = block.settings.collection %}
+        <a class="category-card" href="{% if collection != blank %}{{ collection.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}" {{ block.shopify_attributes }}>
+          <div class="category-image">
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 700 | image_tag: widths: '300,500,700', loading: 'lazy', alt: block.settings.title }}
+            {% elsif collection != blank and collection.featured_image != blank %}
+              {{ collection.featured_image | image_url: width: 700 | image_tag: widths: '300,500,700', loading: 'lazy', alt: collection.title }}
+            {% else %}
+              <div class="image-placeholder"><span>Add image</span></div>
+            {% endif %}
+          </div>
+          <div class="category-copy">
+            <h3>{% if block.settings.title != blank %}{{ block.settings.title }}{% elsif collection != blank %}{{ collection.title }}{% else %}Silicone Products{% endif %}</h3>
+            {% if block.settings.description != blank %}<p>{{ block.settings.description }}</p>{% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product categories",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Explore Our Silicone Product Categories" },
+    { "type": "textarea", "id": "text", "label": "Intro", "default": "Multiple categories, hundreds of product options, one sourcing partner." }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "image_picker", "id": "image", "label": "Category image" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Product categories",
+      "blocks": [
+        { "type": "category", "settings": { "title": "Silicone Kitchenware", "description": "Bowls, utensils, baking tools and more." } },
+        { "type": "category", "settings": { "title": "Silicone Food Storage", "description": "Reusable bags, containers and storage solutions." } },
+        { "type": "category", "settings": { "title": "Silicone Baby Products", "description": "Feeding, teething and everyday baby essentials." } },
+        { "type": "category", "settings": { "title": "Silicone Pet Products", "description": "Bowls, feeding accessories and pet essentials." } },
+        { "type": "category", "settings": { "title": "Silicone Household Products", "description": "Practical silicone solutions for everyday use." } },
+        { "type": "category", "settings": { "title": "Silicone Bathroom Products", "description": "Bathroom organizers, accessories and essentials." } },
+        { "type": "category", "settings": { "title": "Silicone Beauty Products", "description": "Beauty tools and reusable personal-care products." } },
+        { "type": "category", "settings": { "title": "Silicone Outdoor & Sports", "description": "Flexible products for travel, outdoor and active use." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

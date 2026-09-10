@@ -1,9 +1,13 @@
 {
   "sections": {
-    "main": {
-      "type": "main-collection",
+    "collection_hero": {
+      "type": "collection-hero",
+      "settings": {}
+    },
+    "collection_catalog": {
+      "type": "collection-catalog",
       "settings": {}
     }
   },
-  "order": ["main"]
+  "order": ["collection_hero", "collection_catalog"]
 }

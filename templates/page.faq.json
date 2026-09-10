@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "What is your minimum order quantity?", "answer": "<p>MOQ varies by product. Contact us with the products and quantities you need, and we will provide the applicable MOQ.</p>" } },
+        "q2": { "type": "question", "settings": { "question": "Do you offer OEM and ODM services?", "answer": "<p>Yes. We can support customization of product shape, size, color, material, branding and packaging depending on the project.</p>" } },
+        "q3": { "type": "question", "settings": { "question": "Can I request a private label?", "answer": "<p>Yes. Private label options are available for suitable products and order quantities.</p>" } },
+        "q4": { "type": "question", "settings": { "question": "Can you supply different silicone product categories?", "answer": "<p>Yes. Our product range covers kitchenware, food storage, baby, pet, household, bathroom, beauty, and outdoor & sports categories.</p>" } },
+        "q5": { "type": "question", "settings": { "question": "How can I request a quotation?", "answer": "<p>Use our Request a Quote form and include the products, estimated quantity, target market and customization requirements. Our sales team will follow up with the relevant details.</p>" } },
+        "q6": { "type": "question", "settings": { "question": "Do you support international B2B orders?", "answer": "<p>Yes. We work with global wholesalers, retailers, distributors and brands and can discuss shipping and order requirements for your market.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
+      "settings": {
+        "eyebrow": "FAQ",
+        "heading": "Frequently Asked Questions",
+        "intro": "Answers to common questions from global B2B buyers."
+      }
+    }
+  },
+  "order": ["faq"]
+}

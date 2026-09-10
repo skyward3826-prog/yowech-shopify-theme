@@ -4,7 +4,8 @@
     "benefits": { "type": "business-strip", "settings": {} },
     "categories": { "type": "category-grid", "blocks": {}, "block_order": [], "settings": {} },
     "featured": { "type": "featured-products", "settings": {} },
+    "trust": { "type": "seo-trust-bar", "settings": {} },
     "cta": { "type": "home-cta", "settings": {} }
   },
-  "order": ["hero", "benefits", "categories", "featured", "cta"]
+  "order": ["hero", "benefits", "categories", "featured", "trust", "cta"]
 }

@@ -1,0 +1,18 @@
+<article class="product-card">
+  <a class="product-image" href="{{ product.url }}">
+    {% if product.featured_image != blank %}
+      {{ product.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360,540,720,900', alt: product.featured_image.alt | default: product.title | escape }}
+    {% else %}
+      <div class="image-placeholder">Product image</div>
+    {% endif %}
+  </a>
+  <div class="product-card-copy">
+    {% if product.type != blank %}<p class="product-category">{{ product.type | escape }}</p>{% endif %}
+    <h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3>
+    <div class="product-meta">
+      <span>{% if product.price_varies %}{{ product.price_min | money }} – {{ product.price_max | money }}{% else %}{{ product.price | money }}{% endif %}</span>
+      {% if product.metafields.custom.moq.value != blank %}<span>MOQ {{ product.metafields.custom.moq.value | escape }}</span>{% endif %}
+    </div>
+    <a class="product-detail-link" href="{{ product.url }}">View Details →</a>
+  </div>
+</article>

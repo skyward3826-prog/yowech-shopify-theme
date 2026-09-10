@@ -1,0 +1,11 @@
+{
+  "product": {
+    "moq": {"name":"MOQ","type":"single_line_text_field","namespace":"custom","key":"moq"},
+    "material": {"name":"Material","type":"single_line_text_field","namespace":"custom","key":"material"},
+    "colors": {"name":"Available Colors","type":"multi_line_text_field","namespace":"custom","key":"colors"},
+    "size": {"name":"Size","type":"single_line_text_field","namespace":"custom","key":"size"},
+    "packaging": {"name":"Packaging","type":"single_line_text_field","namespace":"custom","key":"packaging"},
+    "specifications": {"name":"Specifications","type":"multi_line_text_field","namespace":"custom","key":"specifications"},
+    "oem_odm": {"name":"OEM / ODM","type":"single_line_text_field","namespace":"custom","key":"oem_odm"}
+  }
+}

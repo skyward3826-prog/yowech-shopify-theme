@@ -1,11 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "hero": { "type": "home-hero", "settings": {} },
-    "categories": { "type": "category-grid", "blocks": {}, "block_order": [], "settings": {} },
-    "why": { "type": "home-why-choose", "settings": {} },
-    "featured": { "type": "featured-products", "settings": {} },
-    "solutions": { "type": "home-solutions", "settings": {} },
-    "cta": { "type": "home-cta", "settings": {} }
+    "hero": {
+      "type": "home-hero",
+      "settings": {
+        "image": "shopify://shop_images/01-home-hero.png"
+      }
+    },
+    "benefits": {
+      "type": "business-strip",
+      "settings": {}
+    },
+    "categories": {
+      "type": "category-grid",
+      "settings": {
+        "heading": "Explore Our Silicone Product Categories",
+        "text": "Multiple categories, hundreds of product options, one sourcing partner."
+      }
+    },
+    "featured": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Selected Silicone Products",
+        "collection": ""
+      }
+    },
+    "trust": {
+      "type": "seo-trust-bar",
+      "settings": {}
+    },
+    "cta": {
+      "type": "home-cta",
+      "settings": {
+        "heading": "Looking for a Reliable Silicone Product Partner?",
+        "text": "Tell us what you are looking for. We can help you source, customize and supply silicone products for your market."
+      }
+    }
   },
-  "order": ["hero", "categories", "why", "featured", "solutions", "cta"]
+  "order": [
+    "hero",
+    "benefits",
+    "categories",
+    "featured",
+    "trust",
+    "cta"
+  ]
 }

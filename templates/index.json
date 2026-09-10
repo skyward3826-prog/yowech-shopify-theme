@@ -5,8 +5,7 @@
     "why": { "type": "home-why-choose", "settings": {} },
     "featured": { "type": "featured-products", "settings": {} },
     "solutions": { "type": "home-solutions", "settings": {} },
-    "cta": { "type": "home-cta", "settings": {} },
-    "trust": { "type": "seo-trust-bar", "settings": {} }
+    "cta": { "type": "home-cta", "settings": {} }
   },
-  "order": ["hero", "categories", "why", "featured", "solutions", "cta", "trust"]
+  "order": ["hero", "categories", "why", "featured", "solutions", "cta"]
 }

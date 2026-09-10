@@ -1,0 +1,44 @@
+<section class="contact-page">
+  <div class="container">
+    <div class="contact-hero">
+      <p class="eyebrow">CONTACT US</p>
+      <h1>Let’s Talk About Your Silicone Products Business</h1>
+      <p>Whether you need wholesale products, OEM / ODM development or private label support, tell us what you are looking for.</p>
+    </div>
+
+    <div class="contact-methods">
+      <a class="contact-method" href="mailto:{{ settings.email | escape }}">
+        <span class="contact-icon" aria-hidden="true">✉</span><span><small>Email</small><strong>{{ settings.email }}</strong></span>
+      </a>
+      {% if settings.whatsapp_url != blank %}<a class="contact-method" href="{{ settings.whatsapp_url }}" target="_blank" rel="noopener"><span class="contact-icon" aria-hidden="true">◉</span><span><small>WhatsApp</small><strong>Chat with our sales team</strong></span></a>{% endif %}
+      {% if settings.facebook_url != blank %}<a class="contact-method" href="{{ settings.facebook_url }}" target="_blank" rel="noopener"><span class="contact-icon" aria-hidden="true">f</span><span><small>Facebook</small><strong>Follow &amp; contact us</strong></span></a>{% endif %}
+      {% if settings.linkedin_url != blank %}<a class="contact-method" href="{{ settings.linkedin_url }}" target="_blank" rel="noopener"><span class="contact-icon" aria-hidden="true">in</span><span><small>LinkedIn</small><strong>Connect with our team</strong></span></a>{% endif %}
+    </div>
+
+    <div class="inquiry-layout">
+      <div class="inquiry-intro"><p class="eyebrow">B2B INQUIRY</p><h2>Tell Us About Your Project</h2><p>Share the products, quantities, target market and customization requirements you have in mind. The more detail you provide, the faster we can prepare a relevant response.</p></div>
+      <div class="inquiry-form-wrap">
+        {% form 'contact', id: 'B2BInquiryForm', class: 'inquiry-form' %}
+          {% if form.posted_successfully? %}<div class="form-success">Thank you. Your inquiry has been received. We’ll get back to you shortly.</div>{% endif %}
+          {{ form.errors | default_errors }}
+          <div class="form-grid">
+            <label>Full Name<input type="text" name="contact[name]" required></label>
+            <label>Company Name<input type="text" name="contact[company]" required></label>
+            <label>Business Email<input type="email" name="contact[email]" required></label>
+            <label>Country / Region<input type="text" name="contact[country]"></label>
+            <label>WhatsApp<input type="text" name="contact[whatsapp]"></label>
+            <label>Product Interested In<input type="text" name="contact[product]"></label>
+            <label>Estimated Order Quantity<input type="text" name="contact[quantity]"></label>
+            <label>OEM / ODM Requirements<input type="text" name="contact[oem_odm]"></label>
+            <label class="full">Message<textarea name="contact[body]" rows="7" placeholder="Tell us about the products, specifications, target price, packaging or other requirements."></textarea></label>
+          </div>
+          <button class="primary-link form-submit" type="submit">Submit Inquiry</button>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{"name":"Contact page","settings":[]}
+{% endschema %}

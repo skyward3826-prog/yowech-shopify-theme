@@ -1,0 +1,14 @@
+<details class="mobile-menu">
+  <summary class="mobile-menu__button" aria-label="Menu"><span></span><span></span><span></span></summary>
+  <div class="mobile-menu__panel">
+    <nav aria-label="Mobile navigation">
+      <a href="{{ routes.root_url }}">{{ 'general.navigation.home' | t }}</a>
+      <a href="{{ routes.all_products_collection_url }}">{{ 'general.navigation.products' | t }}</a>
+      <a href="/pages/oem-odm">{{ 'general.navigation.oem_odm' | t }}</a>
+      <a href="/pages/wholesale">{{ 'general.navigation.wholesale' | t }}</a>
+      <a href="/pages/about-us">{{ 'general.navigation.about_us' | t }}</a>
+      <a href="/pages/contact-us">{{ 'general.navigation.contact_us' | t }}</a>
+    </nav>
+    <a class="primary-link mobile-menu__cta" href="/pages/contact-us">{{ 'general.navigation.request_quote' | t }}</a>
+  </div>
+</details>

@@ -1,0 +1,46 @@
+<section class="home-solutions">
+  <div class="home-solution home-solution--oem">
+    <div class="home-solution-copy">
+      <p class="eyebrow">OEM &amp; ODM</p>
+      <h2>From Idea to Product</h2>
+      <p>Turn your ideas into high-quality silicone products with our professional OEM &amp; ODM services.</p>
+      <div class="home-solution-line"></div>
+      <p class="home-solution-note">Custom design. Your brand. Our expertise.</p>
+    </div>
+    <div class="home-solution-media">
+      {% if section.settings.oem_image != blank %}
+        {{ section.settings.oem_image | image_url: width: 1000 | image_tag: widths: '500,700,1000', loading: 'lazy', alt: 'Silicone product OEM and ODM development' }}
+      {% else %}
+        <div class="image-placeholder"><span>Add OEM / ODM image</span></div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="home-solution home-solution--wholesale">
+    <div class="home-solution-media">
+      {% if section.settings.wholesale_image != blank %}
+        {{ section.settings.wholesale_image | image_url: width: 1000 | image_tag: widths: '500,700,1000', loading: 'lazy', alt: 'Silicone products wholesale supply warehouse' }}
+      {% else %}
+        <div class="image-placeholder"><span>Add wholesale image</span></div>
+      {% endif %}
+    </div>
+    <div class="home-solution-copy">
+      <p class="eyebrow">WHOLESALE SUPPLY</p>
+      <h2>Flexible Supply<br>for Your Business</h2>
+      <p>We support bulk orders with stable quality, reliable production and global shipping.</p>
+      <div class="home-solution-line"></div>
+      <p class="home-solution-note">Grow your business with a trusted partner.</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "OEM & wholesale solutions",
+  "settings": [
+    { "type": "image_picker", "id": "oem_image", "label": "OEM & ODM image" },
+    { "type": "image_picker", "id": "wholesale_image", "label": "Wholesale supply image" }
+  ],
+  "presets": [{ "name": "OEM & wholesale solutions" }]
+}
+{% endschema %}

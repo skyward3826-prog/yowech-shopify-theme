@@ -9,6 +9,7 @@
     {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'mobile-menu.css' | asset_url | stylesheet_tag }}
+    {{ 'homepage-reference.css' | asset_url | stylesheet_tag }}
     {% render 'seo-schema' %}
     {{ content_for_header }}
   </head>

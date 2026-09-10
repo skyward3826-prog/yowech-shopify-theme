@@ -1,0 +1,42 @@
+<div class="language-selector" data-language-selector>
+  <button class="language-selector__button" type="button" aria-expanded="false" aria-controls="LanguageMenu">
+    <span>{{ localization.language.iso_code | upcase }}</span>
+    <span class="language-selector__chevron" aria-hidden="true">⌄</span>
+  </button>
+  <div class="language-selector__menu" id="LanguageMenu" hidden>
+    {% form 'localization', id: 'LanguageForm', class: 'language-selector__form' %}
+      <input type="hidden" name="language_code" value="{{ localization.language.iso_code }}">
+      {% for language in localization.available_languages %}
+        <button type="submit" name="language_code" value="{{ language.iso_code }}" class="language-selector__option{% if language.iso_code == localization.language.iso_code %} is-active{% endif %}">
+          {{ language.endonym_name }}
+        </button>
+      {% endfor %}
+    {% endform %}
+  </div>
+</div>
+<script>
+  (() => {
+    const selector = document.querySelector('[data-language-selector]');
+    if (!selector) return;
+    const button = selector.querySelector('.language-selector__button');
+    const menu = selector.querySelector('.language-selector__menu');
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      menu.hidden = expanded;
+    });
+    document.addEventListener('click', (event) => {
+      if (!selector.contains(event.target)) {
+        button.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Language selector",
+  "settings": []
+}
+{% endschema %}

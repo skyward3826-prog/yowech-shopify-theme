@@ -1,11 +1,12 @@
 {
   "sections": {
     "hero": { "type": "home-hero", "settings": {} },
-    "benefits": { "type": "business-strip", "settings": {} },
     "categories": { "type": "category-grid", "blocks": {}, "block_order": [], "settings": {} },
+    "why": { "type": "home-why-choose", "settings": {} },
     "featured": { "type": "featured-products", "settings": {} },
-    "trust": { "type": "seo-trust-bar", "settings": {} },
-    "cta": { "type": "home-cta", "settings": {} }
+    "solutions": { "type": "home-solutions", "settings": {} },
+    "cta": { "type": "home-cta", "settings": {} },
+    "trust": { "type": "seo-trust-bar", "settings": {} }
   },
-  "order": ["hero", "benefits", "categories", "featured", "trust", "cta"]
+  "order": ["hero", "categories", "why", "featured", "solutions", "cta", "trust"]
 }

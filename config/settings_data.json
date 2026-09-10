@@ -1,0 +1,18 @@
+{
+  "current": {
+    "logo": null,
+    "email": "sales@example.com",
+    "whatsapp_url": "",
+    "facebook_url": "",
+    "linkedin_url": ""
+  },
+  "presets": {
+    "Default": {
+      "logo": null,
+      "email": "sales@example.com",
+      "whatsapp_url": "",
+      "facebook_url": "",
+      "linkedin_url": ""
+    }
+  }
+}

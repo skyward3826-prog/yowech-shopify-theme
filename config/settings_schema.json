@@ -1,38 +1,5 @@
 [
-  {
-    "name": "Branding",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "logo",
-        "label": "Logo"
-      }
-    ]
-  },
-  {
-    "name": "Contact & Social",
-    "settings": [
-      {
-        "type": "text",
-        "id": "email",
-        "label": "Business email",
-        "default": "sales@example.com"
-      },
-      {
-        "type": "url",
-        "id": "whatsapp_url",
-        "label": "WhatsApp URL"
-      },
-      {
-        "type": "url",
-        "id": "facebook_url",
-        "label": "Facebook URL"
-      },
-      {
-        "type": "url",
-        "id": "linkedin_url",
-        "label": "LinkedIn URL"
-      }
-    ]
-  }
+  {"name":"Branding","settings":[{"type":"image_picker","id":"logo","label":"Logo"}]},
+  {"name":"Business Information","settings":[{"type":"text","id":"business_label","label":"Business label","default":"Global Silicone Products Wholesale"},{"type":"textarea","id":"footer_description","label":"Footer description","default":"Global silicone products wholesale, OEM, ODM and private label solutions for B2B buyers."}]},
+  {"name":"Contact & Social","settings":[{"type":"text","id":"email","label":"Business email","default":"sales@example.com"},{"type":"url","id":"whatsapp_url","label":"WhatsApp URL"},{"type":"url","id":"facebook_url","label":"Facebook URL"},{"type":"url","id":"linkedin_url","label":"LinkedIn URL"}]}
 ]

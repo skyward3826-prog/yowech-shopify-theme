@@ -4,7 +4,7 @@
  *
  * This file may be updated by the Shopify admin theme editor
  * or related systems. Please exercise caution as any changes
- * made here may be overwritten.
+ * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
 {
@@ -39,7 +39,10 @@
     },
     "solutions": {
       "type": "home-solutions",
-      "settings": {}
+      "settings": {
+        "oem_image": "shopify://shop_images/10-oem-odm.png",
+        "wholesale_image": "shopify://shop_images/11-wholesale-supply.png"
+      }
     },
     "cta": {
       "type": "home-cta",

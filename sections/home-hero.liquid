@@ -1,25 +1,18 @@
-<section class="home-hero">
+<section class="home-hero home-hero--reference">
+  <div class="home-hero-media">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 1800 | image_tag: widths: '900,1200,1500,1800', loading: 'eager', alt: section.settings.image.alt | default: 'Global silicone products wholesale supplier' }}
+    {% else %}
+      <div class="image-placeholder"><span>Add hero image</span></div>
+    {% endif %}
+  </div>
   <div class="container home-hero-inner">
     <div class="home-hero-copy">
-      <p class="eyebrow">WHOLESALE · OEM / ODM · PRIVATE LABEL</p>
-      <h1>One Supplier.<br>Hundreds of Silicone Products.</h1>
-      <p class="hero-lead">A wide range of silicone products for global wholesalers, retailers, distributors and brands.</p>
-      <p class="hero-categories">Kitchenware · Food Storage · Baby · Pet · Household · Beauty · Outdoor &amp; More</p>
-      <div class="hero-benefits" aria-label="Business benefits">
-        <span>Bulk Orders</span>
-        <span>Low MOQ</span>
-        <span>OEM / ODM</span>
-        <span>Private Label</span>
-        <span>Global Supply</span>
-      </div>
-      <a class="primary-link" href="/pages/contact-us">Request a Quote</a>
-    </div>
-    <div class="home-hero-media">
-      {% if section.settings.image != blank %}
-        {{ section.settings.image | image_url: width: 1400 | image_tag: widths: '600,900,1200,1400', loading: 'eager', alt: section.settings.image.alt | default: 'Silicone products wholesale collection' }}
-      {% else %}
-        <div class="image-placeholder"><span>Add hero image</span></div>
-      {% endif %}
+      <p class="eyebrow">GLOBAL SILICONE PRODUCTS</p>
+      <h1>Global Silicone Products<br>for a Better Everyday Life</h1>
+      <p class="hero-subline">Wide Range&nbsp; | &nbsp;OEM &amp; ODM&nbsp; | &nbsp;Wholesale Supply</p>
+      <div class="hero-rule"></div>
+      <p class="hero-lead">Your one-stop partner for high-quality silicone products across multiple categories.</p>
     </div>
   </div>
 </section>

@@ -1,61 +1,116 @@
-<section class="collection-page">
-  <div class="container">
-    {% render 'breadcrumbs' %}
-    <header class="collection-header">
-      <p class="eyebrow">WHOLESALE SILICONE PRODUCTS</p>
-      <h1>{{ collection.title }}</h1>
-      {% if collection.description != blank %}
-        <div class="collection-description">{{ collection.description }}</div>
-      {% else %}
-        <p class="collection-description">Explore silicone products available for wholesale, OEM, ODM and private label projects.</p>
-      {% endif %}
-    </header>
+<style>
+.collection-reference{background:#fff}.collection-reference *{box-sizing:border-box}.collection-reference__hero{position:relative;min-height:285px;background:#e8e3d9;overflow:hidden}.collection-reference__hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.collection-reference__hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,244,238,.97) 0%,rgba(247,244,238,.84) 35%,rgba(247,244,238,.18) 68%,rgba(247,244,238,0) 100%)}.collection-reference__hero-inner{position:relative;z-index:1;min-height:285px;display:flex;align-items:center}.collection-reference__hero-copy{max-width:620px;padding:34px 0}.collection-reference__hero-copy .eyebrow{margin:0 0 8px}.collection-reference__hero-copy h1{margin:0;color:#173b36;font-size:clamp(42px,5vw,64px);line-height:1;letter-spacing:-.045em}.collection-reference__hero-copy h2{margin:10px 0 0;font-size:21px;font-weight:500;line-height:1.3}.collection-reference__hero-copy p:last-child{margin:14px 0 0;max-width:650px;color:#4f5752;font-size:13px;line-height:1.55}.collection-reference__body{padding:18px 0 55px}.collection-reference__crumbs{font-size:11px;color:#6d746f;margin-bottom:18px}.collection-reference__crumbs a{text-decoration:none}.collection-reference__catalog{display:grid;grid-template-columns:205px minmax(0,1fr);gap:28px}.collection-reference__sidebar{padding-right:6px}.collection-filter-group{border-bottom:1px solid #ddd9d0;padding:0 0 17px;margin-bottom:16px}.collection-filter-title{display:flex;align-items:center;justify-content:space-between;margin:0 0 12px;font-size:14px;font-weight:600}.collection-filter-title span{font-size:18px;font-weight:400;color:#6d746f}.collection-category-list{display:grid;gap:9px}.collection-category-list a{display:flex;align-items:center;gap:9px;font-size:12px;color:#303633}.collection-category-list a:before{content:"";width:13px;height:13px;border:1px solid #bfc5c0;display:inline-block;flex:0 0 13px}.collection-category-list a.is-active{font-weight:600;color:#173b36}.collection-category-list a.is-active:before{box-shadow:inset 0 0 0 3px #fff;background:#173b36}.collection-filter-toggle{display:flex;justify-content:space-between;align-items:center;width:100%;border:0;background:none;padding:0;text-align:left;font:inherit;cursor:pointer}.collection-filter-toggle:after{content:"+";font-size:18px;font-weight:300;color:#6d746f}.collection-filter-content{display:none;padding-top:12px}.collection-filter-group.is-open .collection-filter-content{display:grid;gap:7px}.collection-filter-option{font-size:11px;color:#59615c}.collection-filter-option input{margin-right:7px}.collection-sidebar-cta{margin-top:24px;padding:20px 16px;background:#edf3ee;overflow:hidden}.collection-sidebar-cta h3{margin:0;font-size:19px;line-height:1.15;color:#173b36}.collection-sidebar-cta p{margin:10px 0 14px;font-size:11px;color:#59645f}.collection-sidebar-cta a{display:inline-block;padding:10px 14px;background:#173b36;color:#fff;font-size:11px}.collection-reference__toolbar{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:17px;color:#59615c;font-size:11px}.collection-reference__toolbar-right{display:flex;align-items:center;gap:12px}.collection-reference__sort{border:1px solid #d8dcd8;background:#fff;padding:9px 12px;font-size:11px;color:#303633}.collection-reference__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:25px 18px}.collection-reference__grid .product-card-copy{padding-top:9px}.collection-reference__grid .product-category{font-size:9px}.collection-reference__grid .product-card h3{font-size:12px;line-height:1.3}.collection-reference__grid .product-meta{display:block;margin-top:6px;font-size:10px}.collection-reference__grid .product-meta span:first-child{display:none}.collection-reference__grid .product-meta span:last-child{color:#737a76}.collection-reference__grid .product-detail-link{display:none}.collection-reference__grid .product-image{aspect-ratio:1/1;background:#f2f2ef}.collection-reference__grid .product-image img{object-fit:cover}.collection-reference__empty{padding:60px 30px;border:1px dashed #ddd9d0;text-align:center;color:#6d746f}.collection-reference__pagination{display:flex;justify-content:center;gap:10px;margin-top:30px}.collection-reference__pagination a,.collection-reference__pagination span{min-width:32px;height:32px;display:grid;place-items:center;border:1px solid #e0e2df;font-size:11px}.collection-reference__pagination .current{background:#173b36;color:#fff;border-color:#173b36}.collection-reference__seo{margin-top:48px;border-top:1px solid #ddd9d0;padding-top:35px;max-width:850px}.collection-reference__seo h2{margin:0 0 10px;font-size:24px;color:#173b36}.collection-reference__seo p{margin:0;color:#6d746f;font-size:13px}
+@media(max-width:900px){.collection-reference__catalog{grid-template-columns:1fr}.collection-reference__sidebar{display:none}.collection-reference__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 12px}.collection-reference__hero-copy h1{font-size:42px}.collection-reference__hero-copy h2{font-size:18px}.collection-reference__hero{min-height:300px}.collection-reference__hero-inner{min-height:300px}.collection-reference__toolbar{flex-wrap:wrap}}
+</style>
 
-    <nav class="category-nav" aria-label="Product categories">
-      <a href="{{ routes.all_products_collection_url }}">All Products</a>
-      <a href="/collections/silicone-kitchenware">Kitchenware</a>
-      <a href="/collections/silicone-food-storage">Food Storage</a>
-      <a href="/collections/silicone-baby-products">Baby</a>
-      <a href="/collections/silicone-pet-products">Pet</a>
-      <a href="/collections/silicone-household-products">Household</a>
-      <a href="/collections/silicone-bathroom-products">Bathroom</a>
-      <a href="/collections/silicone-beauty-products">Beauty</a>
-      <a href="/collections/silicone-outdoor-sports">Outdoor & Sports</a>
-    </nav>
+<section class="collection-reference">
+  <div class="collection-reference__hero">
+    {% if section.settings.hero_image != blank %}
+      {{ section.settings.hero_image | image_url: width: 1800 | image_tag: loading: 'eager', alt: collection.title | escape }}
+    {% elsif collection.featured_image != blank %}
+      {{ collection.featured_image | image_url: width: 1800 | image_tag: loading: 'eager', alt: collection.title | escape }}
+    {% elsif collection.products.first.featured_image != blank %}
+      {{ collection.products.first.featured_image | image_url: width: 1800 | image_tag: loading: 'eager', alt: collection.title | escape }}
+    {% endif %}
+    <div class="container collection-reference__hero-inner">
+      <div class="collection-reference__hero-copy">
+        <p class="eyebrow">WHOLESALE SILICONE PRODUCTS</p>
+        <h1>{{ collection.title }}</h1>
+        <h2>A Wide Range of Silicone Products for Global Markets</h2>
+        <p>Explore our full range of silicone products for home, kitchen, baby, pet, beauty, outdoor and more. High quality, wholesale supply, and OEM &amp; ODM services.</p>
+      </div>
+    </div>
+  </div>
 
-    {% paginate collection.products by 24 %}
-      {% if collection.products_count > 0 %}
-        <div class="collection-toolbar">
-          <span>{{ collection.products_count }} products</span>
-          <span>Wholesale inquiry only</span>
-        </div>
-        <div class="product-grid collection-product-grid">
-          {% for product in collection.products %}
-            {% render 'product-card', product: product %}
-          {% endfor %}
-        </div>
-        {% if paginate.pages > 1 %}
-          <nav class="pagination" aria-label="Pagination">
-            {% if paginate.previous %}<a href="{{ paginate.previous.url }}">← Previous</a>{% endif %}
-            <span>Page {{ paginate.current_page }} of {{ paginate.pages }}</span>
-            {% if paginate.next %}<a href="{{ paginate.next.url }}">Next →</a>{% endif %}
+  <div class="container collection-reference__body">
+    <div class="collection-reference__crumbs">{% render 'breadcrumbs' %}</div>
+
+    <div class="collection-reference__catalog">
+      <aside class="collection-reference__sidebar" aria-label="Product filters">
+        <div class="collection-filter-group">
+          <h2 class="collection-filter-title">Product Categories <span>−</span></h2>
+          <nav class="collection-category-list">
+            <a href="{{ routes.all_products_collection_url }}" {% if collection.handle == 'all' %}class="is-active"{% endif %}>Silicone Kitchenware</a>
+            <a href="/collections/silicone-kitchenware">Silicone Kitchenware</a>
+            <a href="/collections/silicone-food-storage">Silicone Food Storage</a>
+            <a href="/collections/silicone-baby-products">Silicone Baby Products</a>
+            <a href="/collections/silicone-pet-products">Silicone Pet Products</a>
+            <a href="/collections/silicone-household-products">Silicone Household Products</a>
+            <a href="/collections/silicone-bathroom-products">Silicone Bathroom Products</a>
+            <a href="/collections/silicone-beauty-products">Silicone Beauty Products</a>
+            <a href="/collections/silicone-outdoor-sports">Silicone Outdoor &amp; Sports</a>
           </nav>
-        {% endif %}
-      {% else %}
-        <div class="section-placeholder">Products will appear here as you add them in Shopify.</div>
-      {% endif %}
-    {% endpaginate %}
+        </div>
 
-    <section class="collection-seo-copy">
-      <h2>{{ collection.title }} for Wholesale & OEM</h2>
-      <p>Source silicone products for wholesale distribution, retail programs, private label and custom development. Contact our team for product specifications, MOQ, packaging, branding and bulk pricing.</p>
-    </section>
+        {% if collection.filters.size > 0 %}
+          {% for filter in collection.filters %}
+            <div class="collection-filter-group">
+              <button type="button" class="collection-filter-toggle" onclick="this.parentElement.classList.toggle('is-open')"><span>{{ filter.label }}</span></button>
+              <div class="collection-filter-content">
+                {% for value in filter.values limit:10 %}
+                  <label class="collection-filter-option"><input type="checkbox"{% if value.active %} checked{% endif %} disabled> {{ value.label }}{% if value.count %} ({{ value.count }}){% endif %}</label>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="collection-filter-group"><button type="button" class="collection-filter-toggle" onclick="this.parentElement.classList.toggle('is-open')"><span>Product Type</span></button></div>
+          <div class="collection-filter-group"><button type="button" class="collection-filter-toggle" onclick="this.parentElement.classList.toggle('is-open')"><span>Application</span></button></div>
+          <div class="collection-filter-group"><button type="button" class="collection-filter-toggle" onclick="this.parentElement.classList.toggle('is-open')"><span>Color</span></button></div>
+          <div class="collection-filter-group"><button type="button" class="collection-filter-toggle" onclick="this.parentElement.classList.toggle('is-open')"><span>Material</span></button></div>
+          <div class="collection-filter-group"><button type="button" class="collection-filter-toggle" onclick="this.parentElement.classList.toggle('is-open')"><span>Certification</span></button></div>
+          <div class="collection-filter-group"><button type="button" class="collection-filter-toggle" onclick="this.parentElement.classList.toggle('is-open')"><span>Custom Service</span></button></div>
+          <div class="collection-filter-group"><button type="button" class="collection-filter-toggle" onclick="this.parentElement.classList.toggle('is-open')"><span>Price Range</span></button></div>
+        {% endif %}
+
+        <div class="collection-sidebar-cta">
+          <h3>Looking for Custom Products?</h3>
+          <p>We provide OEM &amp; ODM services to bring your ideas to life.</p>
+          <a href="/pages/oem-odm">Learn More</a>
+        </div>
+      </aside>
+
+      <main>
+        <div class="collection-reference__toolbar">
+          <span>Showing {{ collection.products_count }} products</span>
+          <div class="collection-reference__toolbar-right"><span>Wholesale inquiry only</span><select class="collection-reference__sort" aria-label="Sort products" onchange="if(this.value) window.location=this.value"><option value="{{ collection.url }}?sort_by=manual">Sort by: Featured</option><option value="{{ collection.url }}?sort_by=created-descending">Newest</option><option value="{{ collection.url }}?sort_by=price-ascending">Price: Low to High</option><option value="{{ collection.url }}?sort_by=price-descending">Price: High to Low</option></select></div>
+        </div>
+
+        {% paginate collection.products by 24 %}
+          {% if collection.products_count > 0 %}
+            <div class="collection-reference__grid">
+              {% for product in collection.products %}
+                {% render 'product-card', product: product %}
+              {% endfor %}
+            </div>
+            {% if paginate.pages > 1 %}
+              <nav class="collection-reference__pagination" aria-label="Pagination">
+                {% if paginate.previous %}<a href="{{ paginate.previous.url }}">‹</a>{% endif %}
+                {% for part in paginate.parts %}
+                  {% if part.is_link %}<a href="{{ part.url }}">{{ part.title }}</a>{% else %}<span class="current">{{ part.title }}</span>{% endif %}
+                {% endfor %}
+                {% if paginate.next %}<a href="{{ paginate.next.url }}">›</a>{% endif %}
+              </nav>
+            {% endif %}
+          {% else %}
+            <div class="collection-reference__empty">Products will appear here as you add them in Shopify.</div>
+          {% endif %}
+        {% endpaginate %}
+
+        <section class="collection-reference__seo">
+          <h2>{{ collection.title }} for Wholesale &amp; OEM</h2>
+          <p>Source silicone products for wholesale distribution, retail programs, private label and custom development. Contact our team for product specifications, MOQ, packaging, branding and bulk pricing.</p>
+        </section>
+      </main>
+    </div>
   </div>
 </section>
 
 {% schema %}
 {
   "name": "Product collection",
-  "settings": []
+  "settings": [
+    {"type":"image_picker","id":"hero_image","label":"Collection hero image"}
+  ]
 }
 {% endschema %}

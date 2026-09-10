@@ -1,0 +1,41 @@
+<section class="home-hero">
+  <div class="container home-hero-inner">
+    <div class="home-hero-copy">
+      <p class="eyebrow">WHOLESALE · OEM / ODM · PRIVATE LABEL</p>
+      <h1>One Supplier.<br>Hundreds of Silicone Products.</h1>
+      <p class="hero-lead">A wide range of silicone products for global wholesalers, retailers, distributors and brands.</p>
+      <p class="hero-categories">Kitchenware · Food Storage · Baby · Pet · Household · Beauty · Outdoor &amp; More</p>
+      <div class="hero-benefits" aria-label="Business benefits">
+        <span>Bulk Orders</span>
+        <span>Low MOQ</span>
+        <span>OEM / ODM</span>
+        <span>Private Label</span>
+        <span>Global Supply</span>
+      </div>
+      <a class="primary-link" href="/pages/contact-us">Request a Quote</a>
+    </div>
+    <div class="home-hero-media">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1400 | image_tag: widths: '600,900,1200,1400', loading: 'eager', alt: section.settings.image.alt | default: 'Silicone products wholesale collection' }}
+      {% else %}
+        <div class="image-placeholder"><span>Add hero image</span></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "B2B Home Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image"
+    }
+  ],
+  "presets": [
+    { "name": "B2B Home Hero" }
+  ]
+}
+{% endschema %}

@@ -9,14 +9,17 @@
     </a>
 
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="{{ routes.root_url }}">Home</a>
-      <a href="{{ routes.all_products_collection_url }}">Products</a>
-      <a href="/pages/oem-odm">OEM &amp; ODM</a>
-      <a href="/pages/wholesale">Wholesale</a>
-      <a href="/pages/about-us">About Us</a>
-      <a href="/pages/contact-us">Contact Us</a>
+      <a href="{{ routes.root_url }}">{{ 'general.navigation.home' | t }}</a>
+      <a href="{{ routes.all_products_collection_url }}">{{ 'general.navigation.products' | t }}</a>
+      <a href="/pages/oem-odm">{{ 'general.navigation.oem_odm' | t }}</a>
+      <a href="/pages/wholesale">{{ 'general.navigation.wholesale' | t }}</a>
+      <a href="/pages/about-us">{{ 'general.navigation.about_us' | t }}</a>
+      <a href="/pages/contact-us">{{ 'general.navigation.contact_us' | t }}</a>
     </nav>
 
-    <a class="header-cta" href="/pages/contact-us">Request a Quote</a>
+    <div class="header-actions">
+      <a class="header-cta" href="/pages/contact-us">{{ 'general.navigation.request_quote' | t }}</a>
+      {% section 'language-selector' %}
+    </div>
   </div>
 </header>

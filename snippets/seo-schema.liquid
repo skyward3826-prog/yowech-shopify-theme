@@ -1,0 +1,26 @@
+{%- comment -%}
+  Global structured data. Uses only Shopify-native store data and editable theme settings.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ shop.url }}#organization",
+      "name": {{ shop.name | json }},
+      "url": {{ shop.url | json }}{% if settings.logo != blank %},
+      "logo": {{ settings.logo | image_url: width: 600 | prepend: 'https:' | json }}{% endif %}{% if settings.email != blank %},
+      "email": {{ settings.email | json }}{% endif %}{% if settings.facebook_url != blank or settings.linkedin_url != blank %},
+      "sameAs": [{% if settings.facebook_url != blank %}{{ settings.facebook_url | json }}{% endif %}{% if settings.facebook_url != blank and settings.linkedin_url != blank %},{% endif %}{% if settings.linkedin_url != blank %}{{ settings.linkedin_url | json }}{% endif %}]{% endif %}
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ shop.url }}#website",
+      "url": {{ shop.url | json }},
+      "name": {{ shop.name | json }},
+      "publisher": {"@id": "{{ shop.url }}#organization"}
+    }
+  ]
+}
+</script>

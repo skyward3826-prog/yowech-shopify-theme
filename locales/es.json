@@ -1,0 +1,14 @@
+{
+  "general": {
+    "navigation": {
+      "home": "Inicio",
+      "products": "Productos",
+      "oem_odm": "OEM y ODM",
+      "wholesale": "Mayorista",
+      "about_us": "Sobre nosotros",
+      "contact_us": "Contacto",
+      "request_quote": "Solicitar cotización"
+    },
+    "language": { "label": "Idioma" }
+  }
+}

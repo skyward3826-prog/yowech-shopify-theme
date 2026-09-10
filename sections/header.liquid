@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+      {% if settings.logo != blank %}
+        {{ settings.logo | image_url: width: 260 | image_tag: class: 'brand-logo', widths: '130,195,260', alt: shop.name }}
+      {% else %}
+        <span class="brand-text">{{ shop.name }}</span>
+      {% endif %}
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="{{ routes.root_url }}">Home</a>
+      <a href="{{ routes.all_products_collection_url }}">Products</a>
+      <a href="/pages/oem-odm">OEM &amp; ODM</a>
+      <a href="/pages/wholesale">Wholesale</a>
+      <a href="/pages/about-us">About Us</a>
+      <a href="/pages/contact-us">Contact Us</a>
+    </nav>
+
+    <a class="header-cta" href="/pages/contact-us">Request a Quote</a>
+  </div>
+</header>

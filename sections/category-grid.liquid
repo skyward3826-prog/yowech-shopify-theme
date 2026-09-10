@@ -1,6 +1,6 @@
-<section class="category-section">
+<section class="category-section home-category-section">
   <div class="container">
-    <div class="section-heading">
+    <div class="section-heading home-category-heading">
       <p class="eyebrow">PRODUCT RANGE</p>
       <h2>{{ section.settings.heading }}</h2>
       <p>{{ section.settings.text }}</p>
@@ -22,7 +22,6 @@
             </div>
             <div class="category-copy">
               <h3>{% if block.settings.title != blank %}{{ block.settings.title }}{% elsif collection != blank %}{{ collection.title }}{% else %}Silicone Products{% endif %}</h3>
-              {% if block.settings.description != blank %}<p>{{ block.settings.description }}</p>{% endif %}
             </div>
           </a>
         {% endfor %}
@@ -41,7 +40,6 @@
               </div>
               <div class="category-copy">
                 <h3>{{ collection.title }}</h3>
-                {% if collection.description != blank %}<p>{{ collection.description | strip_html | truncate: 100 }}</p>{% endif %}
               </div>
             </a>
           {% endif %}
@@ -55,8 +53,8 @@
 {
   "name": "Product categories",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Explore Our Silicone Product Categories" },
-    { "type": "textarea", "id": "text", "label": "Intro", "default": "Multiple categories, hundreds of product options, one sourcing partner." }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "One Partner. Multiple Silicone Categories." },
+    { "type": "textarea", "id": "text", "label": "Intro", "default": "Explore a wide range of silicone products for different markets and business needs." }
   ],
   "blocks": [
     {
@@ -75,14 +73,14 @@
     {
       "name": "Product categories",
       "blocks": [
-        { "type": "category", "settings": { "title": "Silicone Kitchenware", "description": "Bowls, utensils, baking tools and more." } },
-        { "type": "category", "settings": { "title": "Silicone Food Storage", "description": "Reusable bags, containers and storage solutions." } },
-        { "type": "category", "settings": { "title": "Silicone Baby Products", "description": "Feeding, teething and everyday baby essentials." } },
-        { "type": "category", "settings": { "title": "Silicone Pet Products", "description": "Bowls, feeding accessories and pet essentials." } },
-        { "type": "category", "settings": { "title": "Silicone Household Products", "description": "Practical silicone solutions for everyday use." } },
-        { "type": "category", "settings": { "title": "Silicone Bathroom Products", "description": "Bathroom organizers, accessories and essentials." } },
-        { "type": "category", "settings": { "title": "Silicone Beauty Products", "description": "Beauty tools and reusable personal-care products." } },
-        { "type": "category", "settings": { "title": "Silicone Outdoor & Sports", "description": "Flexible products for travel, outdoor and active use." } }
+        { "type": "category", "settings": { "title": "Silicone Kitchenware" } },
+        { "type": "category", "settings": { "title": "Silicone Food Storage" } },
+        { "type": "category", "settings": { "title": "Silicone Baby Products" } },
+        { "type": "category", "settings": { "title": "Silicone Pet Products" } },
+        { "type": "category", "settings": { "title": "Silicone Household Products" } },
+        { "type": "category", "settings": { "title": "Silicone Bathroom Products" } },
+        { "type": "category", "settings": { "title": "Silicone Beauty Products" } },
+        { "type": "category", "settings": { "title": "Silicone Outdoor & Sports" } }
       ]
     }
   ]

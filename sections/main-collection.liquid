@@ -1,0 +1,56 @@
+<section class="collection-page">
+  <div class="container">
+    <header class="collection-header">
+      <p class="eyebrow">WHOLESALE SILICONE PRODUCTS</p>
+      <h1>{{ collection.title }}</h1>
+      {% if collection.description != blank %}
+        <div class="collection-description">{{ collection.description }}</div>
+      {% else %}
+        <p class="collection-description">Explore silicone products available for wholesale, OEM, ODM and private label projects.</p>
+      {% endif %}
+    </header>
+
+    <nav class="category-nav" aria-label="Product categories">
+      <a href="{{ routes.all_products_collection_url }}">All Products</a>
+      <a href="/collections/silicone-kitchenware">Kitchenware</a>
+      <a href="/collections/silicone-food-storage">Food Storage</a>
+      <a href="/collections/silicone-baby-products">Baby</a>
+      <a href="/collections/silicone-pet-products">Pet</a>
+      <a href="/collections/silicone-household-products">Household</a>
+      <a href="/collections/silicone-bathroom-products">Bathroom</a>
+      <a href="/collections/silicone-beauty-products">Beauty</a>
+      <a href="/collections/silicone-outdoor-sports">Outdoor & Sports</a>
+    </nav>
+
+    {% paginate collection.products by 24 %}
+      {% if collection.products_count > 0 %}
+        <div class="collection-toolbar">
+          <span>{{ collection.products_count }} products</span>
+          <span>Wholesale inquiry only</span>
+        </div>
+        <div class="product-grid collection-product-grid">
+          {% for product in collection.products %}
+            {% render 'product-card', product: product %}
+          {% endfor %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+          <nav class="pagination" aria-label="Pagination">
+            {% if paginate.previous %}<a href="{{ paginate.previous.url }}">← Previous</a>{% endif %}
+            <span>Page {{ paginate.current_page }} of {{ paginate.pages }}</span>
+            {% if paginate.next %}<a href="{{ paginate.next.url }}">Next →</a>{% endif %}
+          </nav>
+        {% endif %}
+      {% else %}
+        <div class="section-placeholder">Products will appear here as you add them in Shopify.</div>
+      {% endif %}
+    {% endpaginate %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product collection",
+  "settings": []
+}
+{% endschema %}

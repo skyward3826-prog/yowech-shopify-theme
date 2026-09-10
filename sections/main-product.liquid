@@ -1,11 +1,12 @@
 <section class="product-page">
   <div class="container">
+    {% render 'breadcrumbs' %}
     <div class="product-layout">
       <div class="product-gallery">
         {% if product.images.size > 0 %}
           {% for image in product.images %}
             <div class="product-gallery-image">
-              {{ image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '500,700,900,1200', alt: image.alt | default: product.title | escape }}
+              {{ image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '500,700,900,1200,1400', alt: image.alt | default: product.title | escape }}
             </div>
           {% endfor %}
         {% else %}
@@ -17,18 +18,14 @@
         {% if product.type != blank %}<p class="eyebrow">{{ product.type | escape }}</p>{% endif %}
         <h1>{{ product.title | escape }}</h1>
         <div class="product-price">
-          {% if product.price_varies %}
-            {{ product.price_min | money }} – {{ product.price_max | money }}
-          {% else %}
-            {{ product.price | money }}
-          {% endif %}
+          {% if product.price_varies %}{{ product.price_min | money }} – {{ product.price_max | money }}{% else %}{{ product.price | money }}{% endif %}
         </div>
-        <p class="product-inquiry-note">Wholesale pricing shown for reference. Final pricing depends on quantity, customization and packaging requirements.</p>
+        <p class="product-inquiry-note">Reference wholesale pricing. Final pricing depends on order quantity, customization and packaging requirements.</p>
 
         <div class="product-facts">
           {% if product.metafields.custom.moq.value != blank %}<div><span>MOQ</span><strong>{{ product.metafields.custom.moq.value | escape }}</strong></div>{% endif %}
           {% if product.metafields.custom.material.value != blank %}<div><span>Material</span><strong>{{ product.metafields.custom.material.value | escape }}</strong></div>{% endif %}
-          {% if product.metafields.custom.colors.value != blank %}<div><span>Colors</span><strong>{{ product.metafields.custom.colors.value | escape }}</strong></div>{% endif %}
+          {% if product.metafields.custom.colors.value != blank %}<div><span>Colors</span><strong>{{ product.metafields.custom.colors.value | escape | newline_to_br }}</strong></div>{% endif %}
           {% if product.metafields.custom.size.value != blank %}<div><span>Size</span><strong>{{ product.metafields.custom.size.value | escape }}</strong></div>{% endif %}
           {% if product.metafields.custom.packaging.value != blank %}<div><span>Packaging</span><strong>{{ product.metafields.custom.packaging.value | escape }}</strong></div>{% endif %}
           {% if product.metafields.custom.oem_odm.value != blank %}<div><span>OEM / ODM</span><strong>{{ product.metafields.custom.oem_odm.value | escape }}</strong></div>{% endif %}
@@ -50,9 +47,14 @@
         {% if product.metafields.custom.specifications.value != blank %}
           <div class="product-specifications">
             <h2>Specifications</h2>
-            <div>{{ product.metafields.custom.specifications.value | newline_to_br }}</div>
+            <div>{{ product.metafields.custom.specifications.value | escape | newline_to_br }}</div>
           </div>
         {% endif %}
+
+        <div class="product-b2b-note">
+          <strong>For wholesale, OEM & ODM inquiries</strong>
+          <p>Share your target quantity, destination market, colors, branding and packaging requirements. Our sales team will confirm availability and pricing.</p>
+        </div>
       </aside>
     </div>
 
@@ -66,6 +68,10 @@
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+{{ product | structured_data }}
+</script>
 
 {% schema %}
 {

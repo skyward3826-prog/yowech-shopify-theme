@@ -1,0 +1,36 @@
+<section class="collection-reference collection-hero-section">
+  <div class="collection-reference__hero">
+    {% if section.settings.hero_image != blank %}
+      {{ section.settings.hero_image | image_url: width: 1800 | image_tag: loading: 'eager', alt: collection.title | escape }}
+    {% elsif collection.featured_image != blank %}
+      {{ collection.featured_image | image_url: width: 1800 | image_tag: loading: 'eager', alt: collection.title | escape }}
+    {% endif %}
+    <div class="container collection-reference__hero-inner">
+      <div class="collection-reference__hero-copy">
+        <p class="eyebrow">WHOLESALE SILICONE PRODUCTS</p>
+        <h1>{% if collection.handle == 'all' %}Products{% else %}{{ collection.title }}{% endif %}</h1>
+        <h2>A Wide Range of Silicone Products for Global Markets</h2>
+        <p>Explore our full range of silicone products for home, kitchen, baby, pet, beauty, outdoor and more. High quality, wholesale supply, and OEM &amp; ODM services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Collection hero image",
+      "info": "Recommended: a wide 16:5 or 16:6 image. Leave blank to use the collection image."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection hero"
+    }
+  ]
+}
+{% endschema %}

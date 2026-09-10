@@ -1,0 +1,16 @@
+{
+  "general": {
+    "navigation": {
+      "home": "Home",
+      "products": "Products",
+      "oem_odm": "OEM & ODM",
+      "wholesale": "Wholesale",
+      "about_us": "About Us",
+      "contact_us": "Contact Us",
+      "request_quote": "Request a Quote"
+    },
+    "language": {
+      "label": "Language"
+    }
+  }
+}

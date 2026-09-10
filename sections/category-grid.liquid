@@ -7,24 +7,46 @@
     </div>
 
     <div class="category-grid">
-      {% for block in section.blocks %}
-        {% assign collection = block.settings.collection %}
-        <a class="category-card" href="{% if collection != blank %}{{ collection.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}" {{ block.shopify_attributes }}>
-          <div class="category-image">
-            {% if block.settings.image != blank %}
-              {{ block.settings.image | image_url: width: 700 | image_tag: widths: '300,500,700', loading: 'lazy', alt: block.settings.title }}
-            {% elsif collection != blank and collection.featured_image != blank %}
-              {{ collection.featured_image | image_url: width: 700 | image_tag: widths: '300,500,700', loading: 'lazy', alt: collection.title }}
-            {% else %}
-              <div class="image-placeholder"><span>Add image</span></div>
-            {% endif %}
-          </div>
-          <div class="category-copy">
-            <h3>{% if block.settings.title != blank %}{{ block.settings.title }}{% elsif collection != blank %}{{ collection.title }}{% else %}Silicone Products{% endif %}</h3>
-            {% if block.settings.description != blank %}<p>{{ block.settings.description }}</p>{% endif %}
-          </div>
-        </a>
-      {% endfor %}
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          {% assign collection = block.settings.collection %}
+          <a class="category-card" href="{% if collection != blank %}{{ collection.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}" {{ block.shopify_attributes }}>
+            <div class="category-image">
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 700 | image_tag: widths: '300,500,700', loading: 'lazy', alt: block.settings.title }}
+              {% elsif collection != blank and collection.featured_image != blank %}
+                {{ collection.featured_image | image_url: width: 700 | image_tag: widths: '300,500,700', loading: 'lazy', alt: collection.title }}
+              {% else %}
+                <div class="image-placeholder"><span>Add image</span></div>
+              {% endif %}
+            </div>
+            <div class="category-copy">
+              <h3>{% if block.settings.title != blank %}{{ block.settings.title }}{% elsif collection != blank %}{{ collection.title }}{% else %}Silicone Products{% endif %}</h3>
+              {% if block.settings.description != blank %}<p>{{ block.settings.description }}</p>{% endif %}
+            </div>
+          </a>
+        {% endfor %}
+      {% else %}
+        {% assign category_handles = 'silicone-kitchenware|silicone-food-storage|silicone-baby-products|silicone-pet-products|silicone-household-products|silicone-bathroom-products|silicone-beauty-products|silicone-outdoor-sports' | split: '|' %}
+        {% for handle in category_handles %}
+          {% assign collection = collections[handle] %}
+          {% if collection != blank %}
+            <a class="category-card" href="{{ collection.url }}">
+              <div class="category-image">
+                {% if collection.featured_image != blank %}
+                  {{ collection.featured_image | image_url: width: 700 | image_tag: widths: '300,500,700', loading: 'lazy', alt: collection.title }}
+                {% else %}
+                  <div class="image-placeholder"><span>Add category image</span></div>
+                {% endif %}
+              </div>
+              <div class="category-copy">
+                <h3>{{ collection.title }}</h3>
+                {% if collection.description != blank %}<p>{{ collection.description | strip_html | truncate: 100 }}</p>{% endif %}
+              </div>
+            </a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </section>

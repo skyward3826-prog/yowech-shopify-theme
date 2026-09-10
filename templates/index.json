@@ -1,9 +1,10 @@
 {
   "sections": {
-    "hero": {
-      "type": "home-hero",
-      "settings": {}
-    }
+    "hero": { "type": "home-hero", "settings": {} },
+    "benefits": { "type": "business-strip", "settings": {} },
+    "categories": { "type": "category-grid", "blocks": {}, "block_order": [], "settings": {} },
+    "featured": { "type": "featured-products", "settings": {} },
+    "cta": { "type": "home-cta", "settings": {} }
   },
-  "order": ["hero"]
+  "order": ["hero", "benefits", "categories", "featured", "cta"]
 }

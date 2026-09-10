@@ -1,0 +1,14 @@
+{
+  "general": {
+    "navigation": {
+      "home": "Trang chủ",
+      "products": "Sản phẩm",
+      "oem_odm": "OEM & ODM",
+      "wholesale": "Bán sỉ",
+      "about_us": "Về chúng tôi",
+      "contact_us": "Liên hệ",
+      "request_quote": "Yêu cầu báo giá"
+    },
+    "language": { "label": "Ngôn ngữ" }
+  }
+}

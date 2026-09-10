@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Branding",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      }
+    ]
+  },
+  {
+    "name": "Contact & Social",
+    "settings": [
+      {
+        "type": "text",
+        "id": "email",
+        "label": "Business email",
+        "default": "sales@example.com"
+      },
+      {
+        "type": "url",
+        "id": "whatsapp_url",
+        "label": "WhatsApp URL"
+      },
+      {
+        "type": "url",
+        "id": "facebook_url",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "url",
+        "id": "linkedin_url",
+        "label": "LinkedIn URL"
+      }
+    ]
+  }
+]

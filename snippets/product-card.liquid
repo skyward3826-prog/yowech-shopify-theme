@@ -9,9 +9,18 @@
   <div class="product-card-copy">
     {% if product.type != blank %}<p class="product-category">{{ product.type | escape }}</p>{% endif %}
     <h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3>
+    {% assign color_list = product.metafields.custom.colors.value | default: '' | split: ',' %}
+    {% if product.metafields.custom.colors.value != blank %}
+      <div class="product-swatches" aria-label="Available colors">
+        {% for color in color_list limit:6 %}
+          {% assign color_name = color | strip | downcase | handleize %}
+          <span class="product-swatch product-swatch--{{ color_name }}" title="{{ color | strip | escape }}"></span>
+        {% endfor %}
+      </div>
+    {% endif %}
     <div class="product-meta">
       <span>{% if product.price_varies %}{{ product.price_min | money }} – {{ product.price_max | money }}{% else %}{{ product.price | money }}{% endif %}</span>
-      {% if product.metafields.custom.moq.value != blank %}<span>MOQ {{ product.metafields.custom.moq.value | escape }}</span>{% endif %}
+      {% if product.metafields.custom.moq.value != blank %}<span>MOQ: {{ product.metafields.custom.moq.value | escape }}</span>{% endif %}
     </div>
     <a class="product-detail-link" href="{{ product.url }}">View Details →</a>
   </div>

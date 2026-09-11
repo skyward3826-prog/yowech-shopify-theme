@@ -10,7 +10,7 @@
         <div class="collection-filter-group">
           <h2 class="collection-filter-title">Product Categories <span>−</span></h2>
           <nav class="collection-category-list">
-            <a href="{{ routes.all_products_collection_url }}" {% if collection.handle == 'all' or collection.handle == 'products' %}class="is-active"{% endif %}>All Products</a>
+            <a href="{{ routes.all_products_collection_url }}" {% if template.suffix == blank %}class="is-active"{% endif %}>All Products</a>
             <a href="/collections/silicone-kitchenware" {% if collection.handle == 'silicone-kitchenware' %}class="is-active"{% endif %}>Silicone Kitchenware</a>
             <a href="/collections/silicone-food-storage" {% if collection.handle == 'silicone-food-storage' %}class="is-active"{% endif %}>Silicone Food Storage</a>
             <a href="/collections/silicone-baby-products" {% if collection.handle == 'silicone-baby-products' %}class="is-active"{% endif %}>Silicone Baby Products</a>
@@ -68,7 +68,7 @@
           {% else %}<div class="collection-reference__empty">Products will appear here as you add them in Shopify.</div>{% endif %}
         {% endpaginate %}
 
-        <section class="collection-reference__seo"><h2>{% if collection.handle == 'all' or collection.handle == 'products' %}Silicone Products{% else %}{{ collection.title }}{% endif %} for Wholesale &amp; OEM</h2><p>Source silicone products for wholesale distribution, retail programs, private label and custom development. Contact our team for product specifications, MOQ, packaging, branding and bulk pricing.</p></section>
+        <section class="collection-reference__seo"><h2>{% if template.suffix == blank %}Silicone Products{% else %}{{ collection.title }}{% endif %} for Wholesale &amp; OEM</h2><p>Source silicone products for wholesale distribution, retail programs, private label and custom development. Contact our team for product specifications, MOQ, packaging, branding and bulk pricing.</p></section>
       </main>
     </div>
   </div>

@@ -8,7 +8,7 @@
     <div class="collection-reference__catalog">
       <aside class="collection-reference__sidebar" aria-label="Product filters">
         <div class="collection-filter-group">
-          <h2 class="collection-filter-title">Product Categories <span>−</span></h2>
+          <h2 class="collection-filter-title">{{ section.settings.categories_title }} <span>−</span></h2>
           <nav class="collection-category-list">
             <a href="{{ routes.all_products_collection_url }}" {% if template.suffix == blank %}class="is-active"{% endif %}>All Products</a>
             <a href="/collections/silicone-kitchenware" {% if collection.handle == 'silicone-kitchenware' %}class="is-active"{% endif %}>Silicone Kitchenware</a>
@@ -41,16 +41,16 @@
         {% endif %}
 
         <div class="collection-sidebar-cta">
-          <h3>Looking for Custom Products?</h3>
-          <p>We provide OEM &amp; ODM services to bring your ideas to life.</p>
-          <a href="/pages/oem-odm">Learn More</a>
+          <h3>{{ section.settings.cta_title }}</h3>
+          <p>{{ section.settings.cta_text }}</p>
+          <a href="/pages/oem-odm">{{ section.settings.cta_button }}</a>
         </div>
       </aside>
 
       <main>
         <div class="collection-reference__toolbar">
-          <span>Showing {{ collection.products_count }} products</span>
-          <div class="collection-reference__toolbar-right"><span>Wholesale inquiry only</span><select class="collection-reference__sort" aria-label="Sort products" onchange="if(this.value) window.location=this.value"><option value="{{ collection.url }}?sort_by=manual">Sort by: Featured</option><option value="{{ collection.url }}?sort_by=created-descending">Newest</option><option value="{{ collection.url }}?sort_by=price-ascending">Price: Low to High</option><option value="{{ collection.url }}?sort_by=price-descending">Price: High to Low</option></select></div>
+          <span>{{ section.settings.showing_label }} {{ collection.products_count }} {{ section.settings.products_label }}</span>
+          <div class="collection-reference__toolbar-right"><span>{{ section.settings.inquiry_label }}</span><select class="collection-reference__sort" aria-label="Sort products" onchange="if(this.value) window.location=this.value"><option value="{{ collection.url }}?sort_by=manual">{{ section.settings.sort_featured }}</option><option value="{{ collection.url }}?sort_by=created-descending">Newest</option><option value="{{ collection.url }}?sort_by=price-ascending">Price: Low to High</option><option value="{{ collection.url }}?sort_by=price-descending">Price: High to Low</option></select></div>
         </div>
 
         {% paginate collection.products by 24 %}
@@ -65,15 +65,31 @@
                 {% if paginate.next %}<a href="{{ paginate.next.url }}">›</a>{% endif %}
               </nav>
             {% endif %}
-          {% else %}<div class="collection-reference__empty">Products will appear here as you add them in Shopify.</div>{% endif %}
+          {% else %}<div class="collection-reference__empty">{{ section.settings.empty_text }}</div>{% endif %}
         {% endpaginate %}
 
-        <section class="collection-reference__seo"><h2>{% if template.suffix == blank %}Silicone Products{% else %}{{ collection.title }}{% endif %} for Wholesale &amp; OEM</h2><p>Source silicone products for wholesale distribution, retail programs, private label and custom development. Contact our team for product specifications, MOQ, packaging, branding and bulk pricing.</p></section>
+        <section class="collection-reference__seo"><h2>{{ section.settings.seo_title }}</h2><p>{{ section.settings.seo_text }}</p></section>
       </main>
     </div>
   </div>
 </section>
 
 {% schema %}
-{"name":"Product catalog","settings":[],"presets":[{"name":"Product catalog"}]}
+{
+  "name":"Product catalog",
+  "settings":[
+    {"type":"text","id":"categories_title","label":"Categories heading","default":"Product Categories"},
+    {"type":"text","id":"showing_label","label":"Showing label","default":"Showing"},
+    {"type":"text","id":"products_label","label":"Products label","default":"products"},
+    {"type":"text","id":"inquiry_label","label":"Inquiry label","default":"Wholesale inquiry only"},
+    {"type":"text","id":"sort_featured","label":"Featured sort label","default":"Sort by: Featured"},
+    {"type":"text","id":"cta_title","label":"Sidebar CTA title","default":"Looking for Custom Products?"},
+    {"type":"textarea","id":"cta_text","label":"Sidebar CTA text","default":"We provide OEM & ODM services to bring your ideas to life."},
+    {"type":"text","id":"cta_button","label":"Sidebar CTA button","default":"Learn More"},
+    {"type":"textarea","id":"empty_text","label":"Empty collection text","default":"Products will appear here as you add them in Shopify."},
+    {"type":"text","id":"seo_title","label":"SEO section heading","default":"Silicone Products for Wholesale & OEM"},
+    {"type":"textarea","id":"seo_text","label":"SEO section text","default":"Source silicone products for wholesale distribution, retail programs, private label and custom development. Contact our team for product specifications, MOQ, packaging, branding and bulk pricing."}
+  ],
+  "presets":[{"name":"Product catalog"}]
+}
 {% endschema %}

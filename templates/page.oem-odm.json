@@ -1,1 +1,227 @@
-{"sections":{"main":{"type":"page-oem-odm","settings":{}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-oem-odm",
+      "blocks": {
+        "benefit_wTz3CT": {
+          "type": "benefit",
+          "settings": {
+            "icon": "idea",
+            "title": "Bring Your Ideas to Life",
+            "text": "From concept to finished product."
+          }
+        },
+        "benefit_CQHqnn": {
+          "type": "benefit",
+          "settings": {
+            "icon": "gear",
+            "title": "Flexible Customization",
+            "text": "Customize shape, size, color, logo, packaging and more."
+          }
+        },
+        "benefit_xNchjb": {
+          "type": "benefit",
+          "settings": {
+            "icon": "factory",
+            "title": "Worldwide Shipping",
+            "text": "Reliable logistics and support for global markets."
+          }
+        },
+        "benefit_PG3wHe": {
+          "type": "benefit",
+          "settings": {
+            "icon": "people",
+            "title": "Reliable Quality",
+            "text": "Consistent quality, safe materials and strict quality control."
+          }
+        },
+        "process_nE4dKR": {
+          "type": "process",
+          "settings": {
+            "number": "01",
+            "icon": "chat",
+            "title": "Consultation",
+            "text": "Share your product ideas, requirements and target market with our team."
+          }
+        },
+        "process_8Hggfm": {
+          "type": "process",
+          "settings": {
+            "number": "02",
+            "icon": "document",
+            "title": "Design & Proposal",
+            "text": "Review product concepts, specifications, customization options and quotation."
+          }
+        },
+        "process_eJChDG": {
+          "type": "process",
+          "settings": {
+            "number": "03",
+            "icon": "box",
+            "title": "Sample Development",
+            "text": "Develop samples for review, testing and confirmation before production."
+          }
+        },
+        "process_4cc6XX": {
+          "type": "process",
+          "settings": {
+            "number": "04",
+            "icon": "check",
+            "title": "Quality Control",
+            "text": "Inspect product quality and specifications before shipment."
+          }
+        },
+        "process_7wCrNd": {
+          "type": "process",
+          "settings": {
+            "number": "01",
+            "icon": "truck",
+            "title": "Production & Shipping",
+            "text": "Complete bulk production and arrange reliable worldwide delivery."
+          }
+        },
+        "success_kkH3ee": {
+          "type": "success",
+          "settings": {
+            "image": "shopify://shop_images/07-food-storage-series.png",
+            "title": "Food Storage Series",
+            "text": "Custom colors and private label"
+          }
+        },
+        "success_hMHHQz": {
+          "type": "success",
+          "settings": {
+            "image": "shopify://shop_images/08-baby-products.png",
+            "title": "Baby Products",
+            "text": "OEM solutions designed for international baby brands."
+          }
+        },
+        "success_cMJtfg": {
+          "type": "success",
+          "settings": {
+            "image": "shopify://shop_images/09-pet-products.png",
+            "title": "Pet Products",
+            "text": "Custom shapes, colors and branding for pet brands."
+          }
+        },
+        "success_btfNbi": {
+          "type": "success",
+          "settings": {
+            "image": "shopify://shop_images/10-outdoor-sports.png",
+            "title": "Outdoor & Sports",
+            "text": "Flexible silicone products customized for active lifestyles."
+          }
+        },
+        "success_zEFWDR": {
+          "type": "success",
+          "settings": {
+            "image": "shopify://shop_images/12-bathroom-products.png",
+            "title": "Beauty & Personal Care",
+            "text": "Custom designs and packaging for beauty brands."
+          }
+        },
+        "customization_8RtLYX": {
+          "type": "customization",
+          "settings": {
+            "image": "shopify://shop_images/01-product-design.png",
+            "title": "Product Design",
+            "text": "Custom shapes, sizes and functions for your product needs"
+          }
+        },
+        "customization_9HBH89": {
+          "type": "customization",
+          "settings": {
+            "image": "shopify://shop_images/02-color-customization.png",
+            "title": "Color Customization",
+            "text": "Choose Pantone colors or custom colors for your products."
+          }
+        },
+        "customization_KhyiCE": {
+          "type": "customization",
+          "settings": {
+            "image": "shopify://shop_images/03-logo-branding.png",
+            "title": "Logo & Branding",
+            "text": "Add your logo with printing, engraving or embossing."
+          }
+        },
+        "customization_N7Wbth": {
+          "type": "customization",
+          "settings": {
+            "image": "shopify://shop_images/04-packaging.png",
+            "title": "Packaging",
+            "text": "Custom packaging and private label solutions for your brand."
+          }
+        },
+        "customization_9EK8J4": {
+          "type": "customization",
+          "settings": {
+            "image": "shopify://shop_images/05-material.png",
+            "title": "Material Options",
+            "text": "Select materials based on your product requirements and application."
+          }
+        },
+        "customization_XTmA8R": {
+          "type": "customization",
+          "settings": {
+            "image": "shopify://shop_images/06-function-structure.png",
+            "title": "Function & Structure",
+            "text": "Customize product structure and features for specific applications."
+          }
+        },
+        "success_9778EJ": {
+          "type": "success",
+          "settings": {
+            "image": "shopify://shop_images/07-food-storage-series.png",
+            "title": "Bathroom Products",
+            "text": "Custom shapes, colors and private label solutions."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_wTz3CT",
+        "benefit_CQHqnn",
+        "benefit_xNchjb",
+        "benefit_PG3wHe",
+        "process_nE4dKR",
+        "process_8Hggfm",
+        "process_eJChDG",
+        "process_4cc6XX",
+        "process_7wCrNd",
+        "success_kkH3ee",
+        "success_hMHHQz",
+        "success_cMJtfg",
+        "success_btfNbi",
+        "success_zEFWDR",
+        "customization_8RtLYX",
+        "customization_9HBH89",
+        "customization_KhyiCE",
+        "customization_N7Wbth",
+        "customization_9EK8J4",
+        "customization_XTmA8R",
+        "success_9778EJ"
+      ],
+      "settings": {
+        "hero_image": "shopify://shop_images/661d9003-46c7-4ba4-bc4a-162c7489dcaf.png",
+        "hero_title": "Turn Your Ideas into High-Quality",
+        "hero_subtitle": "Silicone Products",
+        "hero_text": "From concept to mass production, we provide professional OEM & ODM services to help you create unique silicone products for your brand and market.",
+        "hero_button_label": "Start Your Project",
+        "hero_button_link": "",
+        "cta_label": "Contact Us",
+        "cta_link": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

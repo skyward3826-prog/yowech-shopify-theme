@@ -1,0 +1,16 @@
+<section class="contact-reference__cta">
+  <div class="contact-reference__cta-media">
+    {% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 2200 | image_tag: loading: 'lazy', widths: '900,1400,1800,2200', sizes: '100vw', alt: section.settings.image.alt | default: section.settings.title }}{% endif %}
+  </div>
+  <div class="container contact-reference__cta-inner">
+    <div class="contact-reference__cta-copy">
+      <p class="eyebrow">{{ section.settings.label }}</p>
+      <h2>{{ section.settings.title }}</h2>
+      <p>{{ section.settings.text }}</p>
+    </div>
+    <a class="secondary-link" href="/pages/contact-us">{{ section.settings.button }} →</a>
+  </div>
+</section>
+{% schema %}
+{"name":"Contact CTA","settings":[{"type":"image_picker","id":"image","label":"Background image"},{"type":"text","id":"label","label":"Label","default":"READY TO START YOUR PROJECT?"},{"type":"text","id":"title","label":"Title","default":"Get in Touch Today"},{"type":"textarea","id":"text","label":"Text","default":"Tell us your needs and let’s create something great together."},{"type":"text","id":"button","label":"Button","default":"Contact Us"}],"presets":[{"name":"Contact CTA"}]}
+{% endschema %}

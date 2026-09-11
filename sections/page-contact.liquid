@@ -1,119 +1,34 @@
 <section class="contact-reference">
   <div class="contact-reference__hero">
     <div class="contact-reference__hero-media">
-      {% if section.settings.hero_image != blank %}
-        {{ section.settings.hero_image | image_url: width: 2200 | image_tag: loading: 'eager', widths: '900,1400,1800,2200', sizes: '100vw', alt: section.settings.hero_image.alt | default: section.settings.hero_title }}
-      {% else %}
-        <div class="contact-reference__placeholder">Upload Contact Us hero image</div>
-      {% endif %}
+      {% if section.settings.hero_image != blank %}{{ section.settings.hero_image | image_url: width: 2200 | image_tag: loading: 'eager', widths: '900,1400,1800,2200', sizes: '100vw', alt: section.settings.hero_image.alt | default: section.settings.hero_title }}{% else %}<div class="contact-reference__placeholder">Upload Contact Us hero image</div>{% endif %}
     </div>
-    <div class="container contact-reference__hero-inner">
-      <div class="contact-reference__hero-copy">
-        <p class="eyebrow">{{ section.settings.hero_label }}</p>
-        <h1>{{ section.settings.hero_title }}</h1>
-        <h2>{{ section.settings.hero_subtitle }}</h2>
-        <p>{{ section.settings.hero_text }}</p>
-        <div class="contact-reference__hero-features">
-          <span>{{ section.settings.feature_1 }}</span>
-          <span>{{ section.settings.feature_2 }}</span>
-          <span>{{ section.settings.feature_3 }}</span>
-        </div>
-      </div>
-    </div>
+    <div class="container contact-reference__hero-inner"><div class="contact-reference__hero-copy">
+      <p class="eyebrow">{{ section.settings.hero_label }}</p><h1>{{ section.settings.hero_title }}</h1><h2>{{ section.settings.hero_subtitle }}</h2><p>{{ section.settings.hero_text }}</p>
+      <div class="contact-reference__hero-features"><span>{{ section.settings.feature_1 }}</span><span>{{ section.settings.feature_2 }}</span><span>{{ section.settings.feature_3 }}</span></div>
+    </div></div>
   </div>
-
-  <div class="container">
-    <div class="contact-reference__methods">
-      <a class="contact-reference__method" href="mailto:{{ settings.email | escape }}">
-        <span class="contact-reference__icon">✉</span>
-        <span><small>Email Us</small><strong>{{ settings.email | default: 'sales@yourdomain.com' }}</strong><em>Send us an email anytime.</em></span>
-      </a>
-      {% if settings.whatsapp_url != blank %}<a class="contact-reference__method" href="{{ settings.whatsapp_url }}" target="_blank" rel="noopener"><span class="contact-reference__icon">◉</span><span><small>Chat on WhatsApp</small><strong>Chat with our sales team</strong><em>Get a faster response via WhatsApp.</em></span></a>{% endif %}
-      {% if settings.facebook_url != blank %}<a class="contact-reference__method" href="{{ settings.facebook_url }}" target="_blank" rel="noopener"><span class="contact-reference__icon">f</span><span><small>Message on Facebook</small><strong>Follow &amp; message us</strong><em>Connect with our team online.</em></span></a>{% endif %}
-      {% if settings.linkedin_url != blank %}<a class="contact-reference__method" href="{{ settings.linkedin_url }}" target="_blank" rel="noopener"><span class="contact-reference__icon">in</span><span><small>Connect on LinkedIn</small><strong>Connect with our team</strong><em>Build a long-term business relationship.</em></span></a>{% endif %}
+  <div class="container"><div class="contact-reference__methods">
+    <a class="contact-reference__method" href="mailto:{{ settings.email | escape }}"><span class="contact-reference__icon">✉</span><span><small>Email Us</small><strong>{{ settings.email | default: 'sales@yourdomain.com' }}</strong><em>Send us an email anytime.</em></span></a>
+    {% if settings.whatsapp_url != blank %}<a class="contact-reference__method" href="{{ settings.whatsapp_url }}" target="_blank" rel="noopener"><span class="contact-reference__icon">◉</span><span><small>Chat on WhatsApp</small><strong>Chat with our sales team</strong><em>Get a faster response via WhatsApp.</em></span></a>{% endif %}
+    {% if settings.facebook_url != blank %}<a class="contact-reference__method" href="{{ settings.facebook_url }}" target="_blank" rel="noopener"><span class="contact-reference__icon">f</span><span><small>Message on Facebook</small><strong>Follow &amp; message us</strong><em>Connect with our team online.</em></span></a>{% endif %}
+    {% if settings.linkedin_url != blank %}<a class="contact-reference__method" href="{{ settings.linkedin_url }}" target="_blank" rel="noopener"><span class="contact-reference__icon">in</span><span><small>Connect on LinkedIn</small><strong>Connect with our team</strong><em>Build a long-term business relationship.</em></span></a>{% endif %}
+  </div></div>
+  <div class="container"><div class="contact-reference__inquiry"><div class="contact-reference__inquiry-grid">
+    <div class="contact-reference__panel contact-reference__form-panel"><p class="eyebrow">{{ section.settings.form_label }}</p><h2>{{ section.settings.form_title }}</h2><p>{{ section.settings.form_intro }}</p>
+      {% form 'contact', id: 'B2BInquiryForm', class: 'contact-reference__form' %}
+        {% if form.posted_successfully? %}<div class="form-success full">Thank you. Your inquiry has been received. We’ll get back to you shortly.</div>{% endif %}{{ form.errors | default_errors }}
+        <label>Full Name *<input type="text" name="contact[name]" required placeholder="Your name"></label><label>Company Name *<input type="text" name="contact[company]" required placeholder="Your company"></label>
+        <label>Business Email *<input type="email" name="contact[email]" required placeholder="Your email"></label><label>Phone / WhatsApp<input type="text" name="contact[phone]" placeholder="Your phone number"></label>
+        <label>Inquiry Type *<select name="contact[inquiry_type]" required><option value="">Please select</option><option>Wholesale Products</option><option>OEM / ODM</option><option>Private Label</option><option>Other</option></select></label><label>Target Market<select name="contact[target_market]"><option value="">Please select</option><option>North America</option><option>Europe</option><option>Asia</option><option>Australia / New Zealand</option><option>Other</option></select></label>
+        <label class="full">Your Message *<textarea name="contact[body]" rows="6" required placeholder="Tell us about your needs, products, quantity, target price, packaging or other requirements."></textarea></label><button class="primary-link form-submit" type="submit">{{ section.settings.form_button }} →</button>
+      {% endform %}
     </div>
-
-    <div class="contact-reference__inquiry">
-      <div class="contact-reference__inquiry-grid">
-        <div class="contact-reference__panel contact-reference__form-panel">
-          <p class="eyebrow">{{ section.settings.form_label }}</p>
-          <h2>{{ section.settings.form_title }}</h2>
-          <p>{{ section.settings.form_intro }}</p>
-          {% form 'contact', id: 'B2BInquiryForm', class: 'contact-reference__form' %}
-            {% if form.posted_successfully? %}<div class="form-success full">Thank you. Your inquiry has been received. We’ll get back to you shortly.</div>{% endif %}
-            {{ form.errors | default_errors }}
-            <label>Full Name *<input type="text" name="contact[name]" required placeholder="Your name"></label>
-            <label>Company Name *<input type="text" name="contact[company]" required placeholder="Your company"></label>
-            <label>Business Email *<input type="email" name="contact[email]" required placeholder="Your email"></label>
-            <label>Phone / WhatsApp<input type="text" name="contact[phone]" placeholder="Your phone number"></label>
-            <label>Inquiry Type *<select name="contact[inquiry_type]" required><option value="">Please select</option><option>Wholesale Products</option><option>OEM / ODM</option><option>Private Label</option><option>Other</option></select></label>
-            <label>Target Market<select name="contact[target_market]"><option value="">Please select</option><option>North America</option><option>Europe</option><option>Asia</option><option>Australia / New Zealand</option><option>Other</option></select></label>
-            <label class="full">Your Message *<textarea name="contact[body]" rows="6" required placeholder="Tell us about your needs, products, quantity, target price, packaging or other requirements."></textarea></label>
-            <button class="primary-link form-submit" type="submit">{{ section.settings.form_button }} →</button>
-          {% endform %}
-        </div>
-
-        <div class="contact-reference__panel contact-reference__office">
-          <div class="contact-reference__office-copy">
-            <p class="eyebrow">{{ section.settings.office_label }}</p>
-            <h2>{{ section.settings.office_title }}</h2>
-            <p>{{ section.settings.office_intro }}</p>
-            <div class="contact-reference__office-row"><span class="contact-reference__office-symbol">⌖</span><div><strong>{{ section.settings.office_location }}</strong><p>{{ section.settings.office_address }}</p></div></div>
-            <div class="contact-reference__office-row"><span class="contact-reference__office-symbol">◷</span><div><strong>{{ section.settings.hours_title }}</strong><p>{{ section.settings.office_hours }}</p></div></div>
-          </div>
-          <div class="contact-reference__office-image">
-            {% if section.settings.office_image != blank %}{{ section.settings.office_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600,900,1200,1400', sizes: '(min-width: 901px) 40vw, 100vw', alt: section.settings.office_image.alt | default: section.settings.office_title }}{% else %}<div class="contact-reference__placeholder">Upload office image</div>{% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="contact-reference__cta">
-    <div class="contact-reference__cta-media">
-      {% if section.settings.cta_image != blank %}{{ section.settings.cta_image | image_url: width: 2200 | image_tag: loading: 'lazy', widths: '900,1400,1800,2200', sizes: '100vw', alt: section.settings.cta_image.alt | default: section.settings.cta_title }}{% endif %}
-    </div>
-    <div class="container contact-reference__cta-inner">
-      <div class="contact-reference__cta-copy">
-        <p class="eyebrow">{{ section.settings.cta_label }}</p>
-        <h2>{{ section.settings.cta_title }}</h2>
-        <p>{{ section.settings.cta_text }}</p>
-      </div>
-      <a class="secondary-link" href="/pages/contact-us">{{ section.settings.cta_button }} →</a>
-    </div>
-  </div>
+    <div class="contact-reference__panel contact-reference__office"><div class="contact-reference__office-copy"><p class="eyebrow">{{ section.settings.office_label }}</p><h2>{{ section.settings.office_title }}</h2><p>{{ section.settings.office_intro }}</p>
+      <div class="contact-reference__office-row"><span class="contact-reference__office-symbol">⌖</span><div><strong>{{ section.settings.office_location }}</strong><p>{{ section.settings.office_address }}</p></div></div><div class="contact-reference__office-row"><span class="contact-reference__office-symbol">◷</span><div><strong>{{ section.settings.hours_title }}</strong><p>{{ section.settings.office_hours }}</p></div></div>
+    </div><div class="contact-reference__office-image">{% if section.settings.office_image != blank %}{{ section.settings.office_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600,900,1200,1400', sizes: '(min-width: 901px) 40vw, 100vw', alt: section.settings.office_image.alt | default: section.settings.office_title }}{% else %}<div class="contact-reference__placeholder">Upload office image</div>{% endif %}</div></div>
+  </div></div></div>
 </section>
-
 {% schema %}
-{
-  "name": "Contact Us page",
-  "settings": [
-    {"type":"image_picker","id":"hero_image","label":"Hero image","info":"Wide lifestyle image for the top banner."},
-    {"type":"text","id":"hero_label","label":"Hero label","default":"CONTACT US"},
-    {"type":"text","id":"hero_title","label":"Hero title","default":"Let’s Work Together"},
-    {"type":"text","id":"hero_subtitle","label":"Hero subtitle","default":"Your Trusted Partner for Silicone Products"},
-    {"type":"textarea","id":"hero_text","label":"Hero text","default":"Have a question, a project idea, or a quote request? We’re here to help. Reach out to us through the form or any of the contact methods below."},
-    {"type":"text","id":"feature_1","label":"Hero feature 1","default":"Professional Support"},
-    {"type":"text","id":"feature_2","label":"Hero feature 2","default":"Quick Response"},
-    {"type":"text","id":"feature_3","label":"Hero feature 3","default":"Global Cooperation"},
-    {"type":"text","id":"form_label","label":"Form label","default":"B2B INQUIRY"},
-    {"type":"text","id":"form_title","label":"Form title","default":"Send Us a Message"},
-    {"type":"textarea","id":"form_intro","label":"Form intro","default":"Fill in the form below and we will get back to you shortly."},
-    {"type":"text","id":"form_button","label":"Form button","default":"Send Message"},
-    {"type":"text","id":"office_label","label":"Office label","default":"OUR OFFICE"},
-    {"type":"text","id":"office_title","label":"Office title","default":"Let’s Talk About Your Business"},
-    {"type":"textarea","id":"office_intro","label":"Office intro","default":"You are always welcome to contact us. Let’s discuss how we can work together."},
-    {"type":"text","id":"office_location","label":"Office location","default":"Your Office Location"},
-    {"type":"textarea","id":"office_address","label":"Office address","default":"Add your actual office address here."},
-    {"type":"text","id":"hours_title","label":"Business hours title","default":"Business Hours"},
-    {"type":"textarea","id":"office_hours","label":"Business hours","default":"Mon - Fri: 9:00 AM - 6:00 PM\nSat - Sun: Closed"},
-    {"type":"image_picker","id":"office_image","label":"Office image","info":"Company or office building image."},
-    {"type":"image_picker","id":"cta_image","label":"CTA background image","info":"Wide dark lifestyle image for the bottom CTA."},
-    {"type":"text","id":"cta_label","label":"CTA label","default":"READY TO START YOUR PROJECT?"},
-    {"type":"text","id":"cta_title","label":"CTA title","default":"Get in Touch Today"},
-    {"type":"textarea","id":"cta_text","label":"CTA text","default":"Tell us your needs and let’s create something great together."},
-    {"type":"text","id":"cta_button","label":"CTA button","default":"Contact Us"}
-  ],
-  "presets":[{"name":"Contact Us page"}]
-}
+{"name":"Contact Us page","settings":[{"type":"image_picker","id":"hero_image","label":"Hero image","info":"Wide lifestyle image for the top banner."},{"type":"text","id":"hero_label","label":"Hero label","default":"CONTACT US"},{"type":"text","id":"hero_title","label":"Hero title","default":"Let’s Work Together"},{"type":"text","id":"hero_subtitle","label":"Hero subtitle","default":"Your Trusted Partner for Silicone Products"},{"type":"textarea","id":"hero_text","label":"Hero text","default":"Have a question, a project idea, or a quote request? We’re here to help. Reach out to us through the form or any of the contact methods below."},{"type":"text","id":"feature_1","label":"Hero feature 1","default":"Professional Support"},{"type":"text","id":"feature_2","label":"Hero feature 2","default":"Quick Response"},{"type":"text","id":"feature_3","label":"Hero feature 3","default":"Global Cooperation"},{"type":"text","id":"form_label","label":"Form label","default":"B2B INQUIRY"},{"type":"text","id":"form_title","label":"Form title","default":"Send Us a Message"},{"type":"textarea","id":"form_intro","label":"Form intro","default":"Fill in the form below and we will get back to you shortly."},{"type":"text","id":"form_button","label":"Form button","default":"Send Message"},{"type":"text","id":"office_label","label":"Office label","default":"OUR OFFICE"},{"type":"text","id":"office_title","label":"Office title","default":"Let’s Talk About Your Business"},{"type":"textarea","id":"office_intro","label":"Office intro","default":"You are always welcome to contact us. Let’s discuss how we can work together."},{"type":"text","id":"office_location","label":"Office location","default":"Your Office Location"},{"type":"textarea","id":"office_address","label":"Office address","default":"Add your actual office address here."},{"type":"text","id":"hours_title","label":"Business hours title","default":"Business Hours"},{"type":"textarea","id":"office_hours","label":"Business hours","default":"Mon - Fri: 9:00 AM - 6:00 PM\nSat - Sun: Closed"},{"type":"image_picker","id":"office_image","label":"Office image"}],"presets":[{"name":"Contact Us page"}]}
 {% endschema %}

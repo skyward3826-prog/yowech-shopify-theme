@@ -2,11 +2,18 @@
   "sections": {
     "collection_hero": {
       "type": "collection-hero",
-      "settings": {}
+      "settings": {
+        "eyebrow": "WHOLESALE SILICONE PRODUCTS",
+        "title": "Products",
+        "subtitle": "A Wide Range of Silicone Products for Global Markets",
+        "description": "Explore our full range of silicone products for home, kitchen, baby, pet, beauty, outdoor and more. High quality, wholesale supply, and OEM & ODM services."
+      }
     },
     "collection_catalog": {
       "type": "collection-catalog",
-      "settings": {}
+      "settings": {
+        "seo_title": "Silicone Products for Wholesale & OEM"
+      }
     }
   },
   "order": ["collection_hero", "collection_catalog"]

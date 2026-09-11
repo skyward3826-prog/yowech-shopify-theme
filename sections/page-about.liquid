@@ -1,30 +1,73 @@
 <section class="business-page about-page">
+  <div class="about-hero" {% if section.settings.hero_image != blank %}style="background-image:url('{{ section.settings.hero_image | image_url: width: 2200 }}')"{% endif %}>
+    <div class="container about-hero-inner">
+      <div class="about-hero-copy">
+        <p class="eyebrow">{{ section.settings.hero_eyebrow }}</p>
+        <h1>{{ section.settings.hero_title }}</h1>
+        <p class="about-hero-lead">{{ section.settings.hero_description }}</p>
+        {% if section.settings.hero_button != blank %}<a class="primary-link" href="{{ section.settings.hero_button_link }}">{{ section.settings.hero_button }}</a>{% endif %}
+      </div>
+      <div class="about-hero-points">
+        <span>{{ section.settings.hero_point_1 }}</span><span>{{ section.settings.hero_point_2 }}</span><span>{{ section.settings.hero_point_3 }}</span>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
-    <div class="business-page-hero">
-      <p class="eyebrow">ABOUT US</p>
-      <h1>About Our Silicone Products Business</h1>
-      <p class="business-page-lead">Your global partner for silicone products wholesale, OEM, ODM and private label.</p>
+    <div class="business-split about-company">
+      <div class="about-image-wrap">{% if section.settings.company_image != blank %}<img src="{{ section.settings.company_image | image_url: width: 1200 }}" alt="{{ section.settings.company_image.alt | escape }}" loading="lazy">{% endif %}</div>
+      <div class="about-copy"><p class="eyebrow">{{ section.settings.company_eyebrow }}</p><h2>{{ section.settings.company_title }}</h2><p>{{ section.settings.company_text }}</p></div>
     </div>
 
-    <div class="business-split about-intro"><div><p class="eyebrow">MORE THAN A SILICONE SUPPLIER</p><h2>One Partner for a Wider Product Range</h2></div><div><p>We connect global buyers with a wide range of silicone products across multiple categories, offering flexible wholesale supply, OEM &amp; ODM and private label solutions.</p><p>From product selection and customization to order fulfillment, we make silicone sourcing simpler through one reliable partner.</p></div></div>
-
-    <div class="business-feature-grid four-items">
-      <div><span>01</span><h2>Wide Product Selection</h2><p>Multiple silicone categories for different markets.</p></div>
-      <div><span>02</span><h2>Wholesale Supply</h2><p>Flexible solutions for bulk orders and growing businesses.</p></div>
-      <div><span>03</span><h2>OEM &amp; ODM</h2><p>Custom products, colors, branding and packaging.</p></div>
-      <div><span>04</span><h2>Global Support</h2><p>Professional support for international B2B buyers.</p></div>
+    <div class="about-benefits">
+      <div class="about-section-heading"><p class="eyebrow">{{ section.settings.benefits_eyebrow }}</p><h2>{{ section.settings.benefits_title }}</h2></div>
+      <div class="about-benefit-grid">
+        {% for block in section.blocks %}{% if block.type == 'benefit' %}<div class="about-benefit" {{ block.shopify_attributes }}><span class="about-icon">{{ block.settings.icon }}</span><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div>{% endif %}{% endfor %}
+      </div>
     </div>
 
-    <div class="about-values"><p class="eyebrow">BUILT FOR GLOBAL B2B BUYERS</p><h2>Clear Communication. Flexible Supply. Practical Solutions.</h2><p>We focus on making sourcing easier for wholesalers, retailers, distributors and brands that need dependable silicone product options and responsive B2B support.</p></div>
+    <div class="about-factory">
+      <div class="about-factory-copy"><p class="eyebrow">{{ section.settings.factory_eyebrow }}</p><h2>{{ section.settings.factory_title }}</h2><p>{{ section.settings.factory_text }}</p>{% if section.settings.factory_button != blank %}<a class="primary-link" href="{{ section.settings.factory_button_link }}">{{ section.settings.factory_button }}</a>{% endif %}</div>
+      <div class="about-factory-grid">{% if section.settings.factory_image_1 != blank %}<img src="{{ section.settings.factory_image_1 | image_url: width: 900 }}" alt="Factory production" loading="lazy">{% endif %}{% if section.settings.factory_image_2 != blank %}<img src="{{ section.settings.factory_image_2 | image_url: width: 900 }}" alt="Silicone product production" loading="lazy">{% endif %}{% if section.settings.factory_image_3 != blank %}<img src="{{ section.settings.factory_image_3 | image_url: width: 900 }}" alt="Quality control" loading="lazy">{% endif %}{% if section.settings.factory_image_4 != blank %}<img src="{{ section.settings.factory_image_4 | image_url: width: 900 }}" alt="Warehouse and shipping" loading="lazy">{% endif %}</div>
+    </div>
 
-    <div class="business-split"><div><p class="eyebrow">FROM EXISTING PRODUCTS TO CUSTOM SOLUTIONS</p><h2>Start Where You Are</h2></div><div><p>Choose from our existing product range, request a private label program or discuss a custom OEM / ODM project. We adapt the sourcing path to your needs.</p><a class="text-link" href="{{ routes.all_products_collection_url }}">Explore Products →</a></div></div>
+    <div class="about-values-row">
+      <div><p class="eyebrow">{{ section.settings.values_eyebrow }}</p><h2>{{ section.settings.values_title }}</h2><p>{{ section.settings.values_text }}</p></div>
+      <div class="about-value-grid">{% for block in section.blocks %}{% if block.type == 'value' %}<div {{ block.shopify_attributes }}><span class="about-icon">{{ block.settings.icon }}</span><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div>{% endif %}{% endfor %}</div>
+    </div>
 
-    <div class="about-process"><p class="eyebrow">HOW WE WORK</p><h2>A Straightforward B2B Process</h2><div class="step-grid"><div><strong>01</strong><h3>Choose Your Products</h3><p>Browse our silicone categories and product range.</p></div><div><strong>02</strong><h3>Tell Us Your Requirements</h3><p>Share quantity, market and customization needs.</p></div><div><strong>03</strong><h3>Confirm &amp; Develop</h3><p>Finalize specifications, pricing and product details.</p></div><div><strong>04</strong><h3>Production &amp; Delivery</h3><p>Move into production and shipment.</p></div></div></div>
+    <div class="about-global">
+      <div><p class="eyebrow">{{ section.settings.cert_eyebrow }}</p><h2>{{ section.settings.cert_title }}</h2><p>{{ section.settings.cert_text }}</p><div class="about-cert-list"><span>FDA</span><span>LFGB</span><span>BPA FREE</span><span>ISO</span></div></div>
+      <div class="about-global-copy"><p class="eyebrow">{{ section.settings.global_eyebrow }}</p><h2>{{ section.settings.global_title }}</h2><p>{{ section.settings.global_text }}</p>{% if section.settings.global_image != blank %}<img src="{{ section.settings.global_image | image_url: width: 1200 }}" alt="Global market reach" loading="lazy">{% endif %}</div>
+    </div>
 
-    <div class="business-cta"><div><p class="eyebrow">YOUR NEXT SILICONE PRODUCT PARTNER</p><h2>Looking for a Reliable Silicone Product Partner?</h2><p>Tell us what you are looking for. We can help you source, customize and supply silicone products for your market.</p></div><a class="primary-link" href="/pages/contact-us">Request a Quote</a></div>
+    <div class="business-cta about-final-cta" {% if section.settings.cta_image != blank %}style="background-image:linear-gradient(rgba(7,45,40,.84),rgba(7,45,40,.84)),url('{{ section.settings.cta_image | image_url: width: 2200 }}')"{% endif %}><div><p class="eyebrow">{{ section.settings.cta_eyebrow }}</p><h2>{{ section.settings.cta_title }}</h2><p>{{ section.settings.cta_text }}</p></div><a class="primary-link" href="{{ section.settings.cta_button_link }}">{{ section.settings.cta_button }}</a></div>
   </div>
 </section>
 
 {% schema %}
-{"name":"About page","settings":[]}
+{
+  "name":"About Us page",
+  "settings":[
+    {"type":"image_picker","id":"hero_image","label":"Hero image"},
+    {"type":"text","id":"hero_eyebrow","label":"Hero eyebrow","default":"ABOUT US"},
+    {"type":"text","id":"hero_title","label":"Hero title","default":"Creating Better Silicone Products for Global Markets"},
+    {"type":"textarea","id":"hero_description","label":"Hero description","default":"We provide silicone products for global wholesalers, retailers, distributors and brands, with flexible wholesale supply and customization support."},
+    {"type":"text","id":"hero_button","label":"Hero button","default":"Our Products"},{"type":"url","id":"hero_button_link","label":"Hero button link"},
+    {"type":"text","id":"hero_point_1","label":"Hero point 1","default":"Reliable Quality"},{"type":"text","id":"hero_point_2","label":"Hero point 2","default":"Flexible Customization"},{"type":"text","id":"hero_point_3","label":"Hero point 3","default":"Global B2B Support"},
+    {"type":"image_picker","id":"company_image","label":"Company image"},{"type":"text","id":"company_eyebrow","label":"Company eyebrow","default":"OUR COMPANY"},{"type":"text","id":"company_title","label":"Company title","default":"Your Trusted Silicone Products Partner"},{"type":"textarea","id":"company_text","label":"Company text","default":"We support global businesses with a broad silicone product range, practical sourcing solutions and flexible customization options. From existing products to custom projects, we help simplify the sourcing process."},
+    {"type":"text","id":"benefits_eyebrow","label":"Benefits eyebrow","default":"WHY CHOOSE US"},{"type":"text","id":"benefits_title","label":"Benefits title","default":"More Than a Supplier. A Long-Term Partner."},
+    {"type":"text","id":"factory_eyebrow","label":"Factory eyebrow","default":"OUR PRODUCTION"},{"type":"text","id":"factory_title","label":"Factory title","default":"Reliable Production. Consistent Quality."},{"type":"textarea","id":"factory_text","label":"Factory text","default":"We work with established production partners and quality-control processes to support stable supply, consistent specifications and efficient bulk orders."},{"type":"text","id":"factory_button","label":"Factory button","default":"Learn More"},{"type":"url","id":"factory_button_link","label":"Factory button link"},
+    {"type":"image_picker","id":"factory_image_1","label":"Factory image 1"},{"type":"image_picker","id":"factory_image_2","label":"Factory image 2"},{"type":"image_picker","id":"factory_image_3","label":"Factory image 3"},{"type":"image_picker","id":"factory_image_4","label":"Factory image 4"},
+    {"type":"text","id":"values_eyebrow","label":"Values eyebrow","default":"OUR VALUES"},{"type":"text","id":"values_title","label":"Values title","default":"Quality. Innovation. Responsibility."},{"type":"textarea","id":"values_text","label":"Values text","default":"We focus on reliable quality, practical product development and responsible business practices to build lasting partnerships with our customers."},
+    {"type":"text","id":"cert_eyebrow","label":"Certifications eyebrow","default":"CERTIFICATIONS"},{"type":"text","id":"cert_title","label":"Certifications title","default":"Standards You Can Trust"},{"type":"textarea","id":"cert_text","label":"Certifications text","default":"Product requirements and compliance can be discussed according to your target market and application."},
+    {"type":"text","id":"global_eyebrow","label":"Global reach eyebrow","default":"GLOBAL REACH"},{"type":"text","id":"global_title","label":"Global reach title","default":"Supporting Customers Worldwide"},{"type":"textarea","id":"global_text","label":"Global reach text","default":"We support international B2B buyers with clear communication, flexible sourcing and coordinated delivery."},{"type":"image_picker","id":"global_image","label":"Global reach image"},
+    {"type":"image_picker","id":"cta_image","label":"CTA background image"},{"type":"text","id":"cta_eyebrow","label":"CTA eyebrow","default":"LET'S BUILD TOGETHER"},{"type":"text","id":"cta_title","label":"CTA title","default":"Work With Us"},{"type":"textarea","id":"cta_text","label":"CTA text","default":"Tell us what you are looking for and let's discuss how we can support your silicone products business."},{"type":"text","id":"cta_button","label":"CTA button","default":"Contact Us"},{"type":"url","id":"cta_button_link","label":"CTA button link"}
+  ],
+  "blocks":[
+    {"type":"benefit","name":"Why choose us","settings":[{"type":"text","id":"icon","label":"Icon","default":"◆"},{"type":"text","id":"title","label":"Title","default":"Reliable Quality"},{"type":"textarea","id":"text","label":"Text","default":"Consistent specifications and quality control."}]},
+    {"type":"value","name":"Company value","settings":[{"type":"text","id":"icon","label":"Icon","default":"✓"},{"type":"text","id":"title","label":"Title","default":"Quality First"},{"type":"textarea","id":"text","label":"Text","default":"Safe and dependable products."}]}
+  ],
+  "presets":[{"name":"About Us page","blocks":[{"type":"benefit","settings":{"icon":"⚙","title":"Professional Product Support","text":"Practical support for your product and sourcing needs."}},{"type":"benefit","settings":{"icon":"♢","title":"Strict Quality Control","text":"Clear specifications and quality checks for bulk orders."}},{"type":"benefit","settings":{"icon":"✕","title":"Flexible Customization","text":"OEM & ODM support for colors, branding and packaging."}},{"type":"benefit","settings":{"icon":"◉","title":"Customer-Oriented","text":"Responsive B2B communication and long-term support."}},{"type":"value","settings":{"icon":"✓","title":"Quality First","text":"Safe and dependable products."}},{"type":"value","settings":{"icon":"✦","title":"Innovation Driven","text":"New ideas for better products."}},{"type":"value","settings":{"icon":"◌","title":"Sustainable Development","text":"Responsible materials and practices."}},{"type":"value","settings":{"icon":"◉","title":"People Oriented","text":"Customers and partners come first."}}]}]
+}
 {% endschema %}

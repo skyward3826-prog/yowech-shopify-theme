@@ -1,8 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "collection_hero": {
       "type": "collection-hero",
       "settings": {
+        "hero_image": "shopify://shop_images/dbd8c4e0-04c5-48ef-8f76-f5aecd0e5dde.png",
         "eyebrow": "WHOLESALE SILICONE PRODUCTS",
         "title": "Products",
         "subtitle": "A Wide Range of Silicone Products for Global Markets",
@@ -12,9 +22,22 @@
     "collection_catalog": {
       "type": "collection-catalog",
       "settings": {
-        "seo_title": "Silicone Products for Wholesale & OEM"
+        "categories_title": "Product Categories",
+        "showing_label": "Showing",
+        "products_label": "products",
+        "inquiry_label": "Wholesale inquiry only",
+        "sort_featured": "Sort by: Featured",
+        "cta_title": "Looking for Custom Products?",
+        "cta_text": "We provide OEM & ODM services to bring your ideas to life.",
+        "cta_button": "Learn More",
+        "empty_text": "Products will appear here as you add them in Shopify.",
+        "seo_title": "Silicone Products for Wholesale & OEM",
+        "seo_text": "Source silicone products for wholesale distribution, retail programs, private label and custom development. Contact our team for product specifications, MOQ, packaging, branding and bulk pricing."
       }
     }
   },
-  "order": ["collection_hero", "collection_catalog"]
+  "order": [
+    "collection_hero",
+    "collection_catalog"
+  ]
 }

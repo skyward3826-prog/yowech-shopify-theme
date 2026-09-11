@@ -9,7 +9,7 @@
       <li><a href="/collections/silicone-kitchenware">Silicone Kitchenware</a></li><li><a href="/collections/silicone-food-storage">Silicone Food Storage</a></li><li><a href="/collections/silicone-baby-products">Silicone Baby Products</a></li><li><a href="/collections/silicone-pet-products">Silicone Pet Products</a></li><li><a href="/collections/silicone-household-products">Silicone Household Products</a></li><li><a href="/collections/silicone-bathroom-products">Silicone Bathroom Products</a></li><li><a href="/collections/silicone-beauty-products">Silicone Beauty Products</a></li><li><a href="/collections/silicone-outdoor-sports">Silicone Outdoor &amp; Sports</a></li>
     </ul></div>
     <div><h2>Business</h2><ul><li><a href="/pages/wholesale">Wholesale</a></li><li><a href="/pages/oem-odm">OEM &amp; ODM</a></li><li><a href="/pages/contact-us">Request a Quote</a></li></ul></div>
-    <div><h2>Company</h2><ul><li><a href="/pages/about-us">About Us</a></li><li><a href="/pages/contact-us">Contact Us</a></li><li><a href="/pages/faq">FAQ</a></li></ul>
+    <div><h2>Company</h2><ul><li><a href="/pages/about-us">About Us</a></li><li><a href="/pages/contact-us">Contact Us</a></li>
       <div class="footer-socials" aria-label="Social links">
         {% if settings.email != blank %}<a href="mailto:{{ settings.email }}" aria-label="Email">Email</a>{% endif %}
         {% if settings.whatsapp_url != blank %}<a href="{{ settings.whatsapp_url }}" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>{% endif %}
@@ -18,5 +18,5 @@
       </div>
     </div>
   </div>
-  <div class="container footer-bottom"><span>© {{ 'now' | date: '%Y' }} {{ shop.name }}. All Rights Reserved.</span><span class="footer-legal"><a href="{{ routes.privacy_policy_url }}">Privacy Policy</a><a href="{{ routes.terms_of_service_url }}">Terms of Service</a><a href="{{ routes.shipping_policy_url }}">Shipping Policy</a><a href="{{ routes.refund_policy_url }}">Refund Policy</a></span></div>
+  <div class="container footer-bottom"><span>© {{ 'now' | date: '%Y' }} {{ shop.name }}. All Rights Reserved.</span><span class="footer-legal"><a href="{{ routes.privacy_policy_url }}">Privacy Policy</a><a href="{{ routes.terms_of_service_url }}">Terms of Service</a><a href="{{ routes.privacy_policy_url }}">Privacy Policy</a><a href="{{ routes.terms_of_service_url }}">Terms of Service</a></span></div>
 </footer>

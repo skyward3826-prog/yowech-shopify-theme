@@ -1,9 +1,153 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "about_us": {
       "type": "about-us",
-      "settings": {}
+      "blocks": {
+        "value_E6iM9j": {
+          "type": "value",
+          "settings": {
+            "icon": "✓",
+            "title": "Quality First",
+            "text": "Safe and dependable products."
+          }
+        },
+        "value_DBfXkH": {
+          "type": "value",
+          "settings": {
+            "icon": "💡",
+            "title": "Innovation Driven",
+            "text": "Practical product ideas designed to meet changing market needs."
+          }
+        },
+        "value_9L4KAY": {
+          "type": "value",
+          "settings": {
+            "icon": "🌿",
+            "title": "Sustainable Development",
+            "text": "Responsible materials and practices for a better future."
+          }
+        },
+        "value_jxPVrN": {
+          "type": "value",
+          "settings": {
+            "icon": "👥",
+            "title": "People Oriented",
+            "text": "Clear communication and long-term partnerships with our customers."
+          }
+        },
+        "benefit_Pwm3TK": {
+          "type": "benefit",
+          "settings": {
+            "icon": "⚙",
+            "title": "Professional Product Support",
+            "text": "Practical support for product selection, specifications and sourcing requirements."
+          }
+        },
+        "benefit_XWDGBY": {
+          "type": "benefit",
+          "settings": {
+            "icon": "👥",
+            "title": "Customer-Oriented",
+            "text": "Clear communication and responsive support for long-term B2B partnerships."
+          }
+        },
+        "benefit_XbcnPn": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🏭",
+            "title": "Reliable Quality Control",
+            "text": "Consistent specifications and quality checks throughout the sourcing process."
+          }
+        },
+        "benefit_FejtJy": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🛠️",
+            "title": "Flexible Customization",
+            "text": "OEM & ODM support for colors, branding, packaging and product requirements."
+          }
+        }
+      },
+      "block_order": [
+        "value_E6iM9j",
+        "value_DBfXkH",
+        "value_9L4KAY",
+        "value_jxPVrN",
+        "benefit_Pwm3TK",
+        "benefit_XWDGBY",
+        "benefit_XbcnPn",
+        "benefit_FejtJy"
+      ],
+      "settings": {
+        "hero_image": "shopify://shop_images/01-hero-banner.jpg",
+        "hero_eyebrow": "ABOUT US",
+        "hero_title": "Creating Better Silicone Products for Global Markets",
+        "hero_text": "We provide silicone products for global wholesalers, retailers, distributors and brands, with flexible wholesale supply and reliable sourcing support.",
+        "hero_button": "Our Products",
+        "hero_button_link": "",
+        "hero_point_1": "Reliable Quality",
+        "hero_point_2": "Sustainable Materials",
+        "hero_point_3": "Global B2B Support",
+        "company_image": "shopify://shop_images/02-company-yowech.jpg",
+        "company_eyebrow": "OUR COMPANY",
+        "company_title": "Your Trusted Silicone Products Partner",
+        "company_text": "We support global businesses with a broad silicone product range, practical sourcing solutions and flexible customization options. From existing products to custom projects, we help simplify the sourcing process.",
+        "stat_1_value": "10+",
+        "stat_1_label": "Years of Experience",
+        "stat_2_value": "5000+",
+        "stat_2_label": "Product Models",
+        "stat_3_value": "100+",
+        "stat_3_label": "Global Customers",
+        "stat_4_value": "50+",
+        "stat_4_label": "Countries & Regions",
+        "why_eyebrow": "WHY CHOOSE US",
+        "why_title": "More Than a Supplier. A Long-Term Partner.",
+        "factory_eyebrow": "OUR PRODUCTION",
+        "factory_title": "Reliable Production. Consistent Quality.",
+        "factory_text": "We work with established production partners and quality-control processes to support stable supply, consistent specifications and efficient bulk orders.",
+        "factory_button": "Learn More",
+        "factory_button_link": "",
+        "factory_image_1": "shopify://shop_images/03-factory-1-production-line.jpg",
+        "factory_caption_1": "Modern Production Line",
+        "factory_image_2": "shopify://shop_images/04-factory-2-quality-control.jpg",
+        "factory_caption_2": "Strict Quality Control",
+        "factory_image_3": "shopify://shop_images/05-factory-3-manufacturing.jpg",
+        "factory_caption_3": "Efficient Manufacturing",
+        "factory_image_4": "shopify://shop_images/06-factory-4-warehouse.jpg",
+        "factory_caption_4": "Stable Supply Capacity",
+        "values_eyebrow": "OUR VALUES",
+        "values_title": "Quality. Innovation. Responsibility.",
+        "values_text": "We focus on reliable quality, practical product development and responsible business practices to build lasting partnerships with our customers.",
+        "cert_eyebrow": "CERTIFICATIONS",
+        "cert_title": "International Standards You Can Trust",
+        "cert_text": "Product requirements and compliance can be discussed according to your target market and application.",
+        "cert_image_1": "shopify://shop_images/10-certification-iso9001.jpg",
+        "cert_image_2": "shopify://shop_images/09-certification-bpa-free.jpg",
+        "cert_image_3": "shopify://shop_images/08-certification-lfgb.jpg",
+        "cert_image_4": "shopify://shop_images/07-certification-fda.jpg",
+        "global_eyebrow": "GLOBAL REACH",
+        "global_title": "Supporting Customers Worldwide",
+        "global_text": "We support international B2B buyers with clear communication, flexible sourcing and coordinated delivery.",
+        "global_image": "shopify://shop_images/11-global-reach.jpg",
+        "cta_image": "shopify://shop_images/12-cta-background.jpg",
+        "cta_eyebrow": "LET'S BUILD TOGETHER",
+        "cta_title": "Work With Us",
+        "cta_text": "Tell us what you are looking for and let's discuss how we can support your silicone products business.",
+        "cta_button": "Contact Us",
+        "cta_button_link": ""
+      }
     }
   },
-  "order": ["about_us"]
+  "order": [
+    "about_us"
+  ]
 }

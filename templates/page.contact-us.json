@@ -1,1 +1,19 @@
-{"sections":{"main":{"type":"page-contact","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "main": {"type":"page-contact","settings":{}},
+    "faq": {
+      "type":"faq",
+      "settings":{"eyebrow":"FAQ","heading":"Frequently Asked Questions","intro":"Quick answers to common questions from global B2B buyers."},
+      "blocks":{
+        "q1":{"type":"question","settings":{"question":"What is the minimum order quantity (MOQ)?","answer":"<p>MOQ varies by product. Contact us with the products and quantities you need, and we will provide the applicable MOQ.</p>"}},
+        "q2":{"type":"question","settings":{"question":"Can you provide OEM & ODM services?","answer":"<p>Yes. We can support customization of product shape, size, color, material, branding and packaging depending on the project.</p>"}},
+        "q3":{"type":"question","settings":{"question":"Can I request private label products?","answer":"<p>Yes. Private label options are available for suitable products and order quantities.</p>"}},
+        "q4":{"type":"question","settings":{"question":"What are your main silicone product categories?","answer":"<p>Our range covers kitchenware, food storage, baby, pet, household, bathroom, beauty, and outdoor &amp; sports products.</p>"}},
+        "q5":{"type":"question","settings":{"question":"How can I request a quotation?","answer":"<p>Submit the inquiry form above with your products, estimated quantity, target market and customization requirements. Our sales team will follow up with the relevant details.</p>"}}
+      },
+      "block_order":["q1","q2","q3","q4","q5"]
+    },
+    "cta":{"type":"contact-cta","settings":{}}
+  },
+  "order":["main","faq","cta"]
+}

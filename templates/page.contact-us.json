@@ -1,6 +1,7 @@
 {
   "sections": {
     "main": {"type":"page-contact","settings":{}},
+    "contact_methods": {"type":"contact-methods","settings":{}},
     "faq": {
       "type":"faq",
       "settings":{"eyebrow":"FAQ","heading":"Frequently Asked Questions","intro":"Quick answers to common questions from global B2B buyers."},
@@ -15,5 +16,5 @@
     },
     "cta":{"type":"contact-cta","settings":{}}
   },
-  "order":["main","faq","cta"]
+  "order":["main","contact_methods","faq","cta"]
 }

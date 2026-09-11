@@ -1,9 +1,118 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "page-wholesale-v2",
-      "settings": {}
+      "blocks": {
+        "benefit_4ATHJH": {
+          "type": "benefit",
+          "settings": {
+            "number": "01",
+            "title": "Wide Product Selection",
+            "text": "Various silicone categories and product options for different markets."
+          }
+        },
+        "benefit_RGUDrf": {
+          "type": "benefit",
+          "settings": {
+            "number": "02",
+            "title": "Flexible MOQ",
+            "text": "Flexible order quantities to support different business sizes and product needs."
+          }
+        },
+        "benefit_MY6knV": {
+          "type": "benefit",
+          "settings": {
+            "number": "03",
+            "title": "Private Label Ready",
+            "text": "Customize colors, logos, packaging and branding for your own product line."
+          }
+        },
+        "benefit_e7Jg3m": {
+          "type": "benefit",
+          "settings": {
+            "number": "04",
+            "title": "Global B2B Support",
+            "text": "Clear communication, reliable logistics and support for international orders."
+          }
+        },
+        "step_grzetM": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Select Products",
+            "text": "Browse categories and product details."
+          }
+        },
+        "step_TCjFxc": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "Send Requirements",
+            "text": "Tell us your quantity, target market, colors, branding and packaging requirements."
+          }
+        },
+        "step_WyrnY9": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "Confirm Quote",
+            "text": "Review pricing, specifications, MOQ and customization details with our team."
+          }
+        },
+        "step_UjkXB8": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "Production & Delivery",
+            "text": "We arrange production, quality control and reliable delivery to your market."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_4ATHJH",
+        "benefit_RGUDrf",
+        "benefit_MY6knV",
+        "benefit_e7Jg3m",
+        "step_grzetM",
+        "step_TCjFxc",
+        "step_WyrnY9",
+        "step_UjkXB8"
+      ],
+      "settings": {
+        "hero_image": "shopify://shop_images/01-wholesale-hero-banner.jpg",
+        "hero_eyebrow": "WHOLESALE · GLOBAL SUPPLY",
+        "hero_title": "Quality Silicone Products for Your Business",
+        "hero_description": "Source a wide range of silicone products from one reliable B2B partner, with flexible quantities, private label support and global supply.",
+        "hero_button_label": "Browse Wholesale Products",
+        "hero_button_link": "",
+        "sourcing_image": "shopify://shop_images/a0ebde1e-dedb-4e30-af47-b5f585037479.png",
+        "sourcing_eyebrow": "WHOLESALE SOURCING",
+        "sourcing_title": "One Supplier for Multiple Silicone Categories",
+        "sourcing_text": "Build your silicone product range without managing multiple suppliers. Explore kitchenware, food storage, baby, pet, household, bathroom, beauty and outdoor products through one sourcing partner.",
+        "sourcing_button_label": "Explore Products",
+        "sourcing_button_link": "",
+        "steps_eyebrow": "HOW TO ORDER",
+        "steps_title": "Easy Wholesale Ordering Process",
+        "steps_description": "Simple steps to get the products you need.",
+        "cta_image": "shopify://shop_images/03-wholesale-cta-background.jpg",
+        "cta_eyebrow": "LET'S GROW TOGETHER",
+        "cta_title": "Partner with Us for Wholesale Supply",
+        "cta_text": "Quality products, flexible orders and reliable service for your business.",
+        "cta_button_label": "Get a Wholesale Quote",
+        "cta_button_link": ""
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

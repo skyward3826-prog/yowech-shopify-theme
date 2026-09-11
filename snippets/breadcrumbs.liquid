@@ -4,8 +4,10 @@
     <span aria-hidden="true">/</span>
     {% if collection %}
       <a href="{{ routes.all_products_collection_url }}">Products</a>
-      <span aria-hidden="true">/</span>
-      <span>{{ collection.title }}</span>
+      {% unless collection.handle == 'all' or collection.handle == 'products' %}
+        <span aria-hidden="true">/</span>
+        <span>{{ collection.title }}</span>
+      {% endunless %}
     {% elsif product %}
       <a href="{{ routes.all_products_collection_url }}">Products</a>
       <span aria-hidden="true">/</span>

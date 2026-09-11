@@ -1,7 +1,21 @@
 {
   "sections": {
+    "hero": {
+      "type": "contact-hero",
+      "settings": {}
+    },
+    "contact_methods": {
+      "type": "contact-methods",
+      "blocks": {
+        "email": {"type":"method","settings":{"fallback":"✉","label":"EMAIL US","title":"sales@yowech.com","text":"Send us an email anytime.","link":"mailto:sales@yowech.com","new_tab":false,"show_arrow":true}},
+        "whatsapp": {"type":"method","settings":{"fallback":"◉","label":"CHAT ON WHATSAPP","title":"Chat with our sales team","text":"Get a faster response via WhatsApp.","link":"https://wa.me/","new_tab":true,"show_arrow":true}},
+        "facebook": {"type":"method","settings":{"fallback":"f","label":"MESSAGE ON FACEBOOK","title":"Follow & message us","text":"Connect with our team online.","link":"https://facebook.com/","new_tab":true,"show_arrow":true}},
+        "linkedin": {"type":"method","settings":{"fallback":"in","label":"CONNECT ON LINKEDIN","title":"Connect with our team","text":"Build a long-term business relationship.","link":"https://linkedin.com/","new_tab":true,"show_arrow":true}}
+      },
+      "block_order": ["email","whatsapp","facebook","linkedin"],
+      "settings": {}
+    },
     "main": {"type":"page-contact","settings":{}},
-    "contact_methods": {"type":"contact-methods","settings":{}},
     "faq": {
       "type":"faq",
       "settings":{"eyebrow":"FAQ","heading":"Frequently Asked Questions","intro":"Quick answers to common questions from global B2B buyers."},
@@ -16,5 +30,5 @@
     },
     "cta":{"type":"contact-cta","settings":{}}
   },
-  "order":["main","contact_methods","faq","cta"]
+  "order":["hero","contact_methods","main","faq","cta"]
 }

@@ -1,7 +1,7 @@
 {
   "sections": {
-    "collection_hero": { "type": "collection-hero", "settings": {} },
-    "collection_catalog": { "type": "collection-catalog", "settings": {} }
+    "collection_hero": { "type": "collection-hero", "settings": {"title":"Silicone Outdoor & Sports"} },
+    "collection_catalog": { "type": "collection-catalog", "settings": {"seo_title":"Silicone Outdoor & Sports for Wholesale & OEM"} }
   },
   "order": ["collection_hero", "collection_catalog"]
 }

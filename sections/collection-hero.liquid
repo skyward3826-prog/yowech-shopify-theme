@@ -1,14 +1,14 @@
 <section class="collection-reference collection-hero-section">
   <div class="collection-reference__hero{% if section.settings.hero_image == blank %} collection-reference__hero--no-image{% endif %}">
     {% if section.settings.hero_image != blank %}
-      {{ section.settings.hero_image | image_url: width: 2400 | image_tag: loading: 'eager', alt: collection.title | escape }}
+      {{ section.settings.hero_image | image_url: width: 2400 | image_tag: loading: 'eager', alt: section.settings.title | escape }}
     {% endif %}
     <div class="container collection-reference__hero-inner">
       <div class="collection-reference__hero-copy">
-        <p class="eyebrow">WHOLESALE SILICONE PRODUCTS</p>
-        <h1>{% if template.suffix == blank %}Products{% else %}{{ collection.title }}{% endif %}</h1>
-        <h2>A Wide Range of Silicone Products for Global Markets</h2>
-        <p>Explore our full range of silicone products for home, kitchen, baby, pet, beauty, outdoor and more. High quality, wholesale supply, and OEM &amp; ODM services.</p>
+        <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+        <h1>{{ section.settings.title }}</h1>
+        <h2>{{ section.settings.subtitle }}</h2>
+        <p>{{ section.settings.description }}</p>
       </div>
     </div>
   </div>
@@ -31,17 +31,12 @@
 {
   "name": "Collection hero",
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "hero_image",
-      "label": "Collection hero image",
-      "info": "Upload a dedicated wide banner. If left blank, the section uses a clean background and never falls back to the collection image."
-    }
+    {"type":"image_picker","id":"hero_image","label":"Collection hero image","info":"Upload a dedicated wide banner for this collection."},
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"WHOLESALE SILICONE PRODUCTS"},
+    {"type":"text","id":"title","label":"Main title","default":"Products"},
+    {"type":"text","id":"subtitle","label":"Subtitle","default":"A Wide Range of Silicone Products for Global Markets"},
+    {"type":"textarea","id":"description","label":"Description","default":"Explore our full range of silicone products for home, kitchen, baby, pet, beauty, outdoor and more. High quality, wholesale supply, and OEM & ODM services."}
   ],
-  "presets": [
-    {
-      "name": "Collection hero"
-    }
-  ]
+  "presets": [{"name":"Collection hero"}]
 }
 {% endschema %}

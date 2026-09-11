@@ -6,7 +6,7 @@
     <div class="container collection-reference__hero-inner">
       <div class="collection-reference__hero-copy">
         <p class="eyebrow">WHOLESALE SILICONE PRODUCTS</p>
-        <h1>{% if collection.handle == 'all' %}Products{% else %}{{ collection.title }}{% endif %}</h1>
+        <h1>{% if collection.handle == 'all' or collection.handle == 'products' %}Products{% else %}{{ collection.title }}{% endif %}</h1>
         <h2>A Wide Range of Silicone Products for Global Markets</h2>
         <p>Explore our full range of silicone products for home, kitchen, baby, pet, beauty, outdoor and more. High quality, wholesale supply, and OEM &amp; ODM services.</p>
       </div>

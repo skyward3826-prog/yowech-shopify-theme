@@ -1,0 +1,29 @@
+<section class="contact-page__hero">
+  <div class="contact-page__hero-media">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 2200 | image_tag: loading: 'eager', widths: '900,1400,1800,2200', sizes: '100vw', alt: section.settings.title }}
+    {% endif %}
+  </div>
+  <div class="container contact-page__hero-inner">
+    <div class="contact-page__hero-copy">
+      <p class="eyebrow">{{ section.settings.label }}</p>
+      <h1>{{ section.settings.title }}</h1>
+      <h2>{{ section.settings.subtitle }}</h2>
+      <p>{{ section.settings.text }}</p>
+      <div class="contact-page__hero-features">
+        <span>{{ section.settings.feature_1 }}</span>
+        <span>{{ section.settings.feature_2 }}</span>
+        <span>{{ section.settings.feature_3 }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.contact-page__hero{position:relative;min-height:390px;overflow:hidden;background:#eef1ed}.contact-page__hero-media{position:absolute;inset:0}.contact-page__hero-media img{width:100%;height:100%;object-fit:cover}.contact-page__hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,244,238,.98) 0%,rgba(247,244,238,.88) 34%,rgba(247,244,238,.28) 65%,rgba(247,244,238,0) 100%)}.contact-page__hero-inner{position:relative;z-index:1;min-height:390px;display:flex;align-items:center}.contact-page__hero-copy{max-width:570px;padding:48px 0}.contact-page__hero .eyebrow{margin:0 0 16px;color:#547067;font-size:11px;font-weight:700;letter-spacing:.16em}.contact-page__hero h1{margin:0;font-size:clamp(42px,5vw,66px);line-height:1.02;letter-spacing:-.045em;color:#123b36}.contact-page__hero h2{margin:10px 0 0;font-size:22px;line-height:1.2}.contact-page__hero-copy>p:not(.eyebrow){max-width:540px;margin:16px 0 0;color:#52615b;font-size:15px;line-height:1.55}.contact-page__hero-features{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:26px}.contact-page__hero-features span{font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:7px}.contact-page__hero-features span:before{content:'✓';font-size:16px}
+@media(max-width:900px){.contact-page__hero{min-height:420px}.contact-page__hero-inner{min-height:420px}.contact-page__hero-media:after{background:linear-gradient(90deg,rgba(247,244,238,.97),rgba(247,244,238,.68) 65%,rgba(247,244,238,.2))}}@media(max-width:640px){.contact-page__hero{min-height:540px}.contact-page__hero-inner{min-height:540px;align-items:flex-end}.contact-page__hero-copy{padding:38px 0}.contact-page__hero h1{font-size:42px}.contact-page__hero h2{font-size:19px}}
+</style>
+
+{% schema %}
+{"name":"Contact hero","settings":[{"type":"image_picker","id":"image","label":"Hero image","info":"Wide lifestyle image for the top banner."},{"type":"text","id":"label","label":"Label","default":"CONTACT US"},{"type":"text","id":"title","label":"Title","default":"Let’s Work Together"},{"type":"text","id":"subtitle","label":"Subtitle","default":"Your Trusted Partner for Silicone Products"},{"type":"textarea","id":"text","label":"Text","default":"Have a question, a project idea, or a quote request? We’re here to help. Reach out to us through the form or any of the contact methods below."},{"type":"text","id":"feature_1","label":"Feature 1","default":"Professional Support"},{"type":"text","id":"feature_2","label":"Feature 2","default":"Quick Response"},{"type":"text","id":"feature_3","label":"Feature 3","default":"Global Cooperation"}],"presets":[{"name":"Contact hero"}]}
+{% endschema %}

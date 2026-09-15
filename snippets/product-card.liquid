@@ -1,4 +1,4 @@
-<article class="product-card">
+<article class="product-card" data-moq-value="{{ product.metafields.custom.moq.value | default: '' | escape }}">
   <a class="product-image" href="{{ product.url }}">
     {% if product.featured_image != blank %}
       {{ product.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360,540,720,900', alt: product.featured_image.alt | default: product.title | escape }}

@@ -55,9 +55,9 @@
             <div class="collection-reference__toolbar-right">
               <label for="catalog-per-page-{{ section.id }}">{{ section.settings.per_page_label }}</label>
               <select id="catalog-per-page-{{ section.id }}" class="collection-reference__per-page" data-per-page-selector aria-label="Products per page">
-                <option value="20"{% if section.settings.products_per_page == 20 %} selected{% endif %}>20</option>
-                <option value="30"{% if section.settings.products_per_page == 30 %} selected{% endif %}>30</option>
-                <option value="40"{% if section.settings.products_per_page == 40 %} selected{% endif %}>40</option>
+                <option value="20"{% if section.settings.products_per_page == '20' %} selected{% endif %}>20</option>
+                <option value="30"{% if section.settings.products_per_page == '30' %} selected{% endif %}>30</option>
+                <option value="40"{% if section.settings.products_per_page == '40' %} selected{% endif %}>40</option>
               </select>
               <span>{{ section.settings.inquiry_label }}</span>
               <select class="collection-reference__sort" aria-label="Sort products" onchange="if(this.value) window.location=this.value"><option value="{{ collection.url }}?sort_by=manual">{{ section.settings.sort_featured }}</option><option value="{{ collection.url }}?sort_by=created-descending">Newest</option><option value="{{ collection.url }}?sort_by=price-ascending">Price: Low to High</option><option value="{{ collection.url }}?sort_by=price-descending">Price: High to Low</option></select>

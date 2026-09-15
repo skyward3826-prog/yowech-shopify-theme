@@ -19,59 +19,18 @@
         "description": "Explore our full range of silicone products for home, kitchen, baby, pet, beauty, outdoor and more. High quality, wholesale supply, and OEM & ODM services."
       }
     },
-    "collection_catalog_20": {
+    "collection_catalog": {
       "type": "collection-catalog",
       "settings": {
         "categories_title": "Product Categories",
         "showing_label": "Showing",
         "products_label": "products",
-        "per_page_label": "Products per page:",
-        "products_per_page": "20",
         "inquiry_label": "Wholesale inquiry only",
         "sort_featured": "Sort by: Featured",
         "cta_title": "Looking for Custom Products?",
         "cta_text": "We provide OEM & ODM services to bring your ideas to life.",
         "cta_button": "Learn More",
         "empty_text": "Products will appear here as you add them in Shopify.",
-        "show_seo": true,
-        "seo_title": "Silicone Products for Wholesale & OEM",
-        "seo_text": "Source silicone products for wholesale distribution, retail programs, private label and custom development. Contact our team for product specifications, MOQ, packaging, branding and bulk pricing."
-      }
-    },
-    "collection_catalog_30": {
-      "type": "collection-catalog",
-      "settings": {
-        "categories_title": "Product Categories",
-        "showing_label": "Showing",
-        "products_label": "products",
-        "per_page_label": "Products per page:",
-        "products_per_page": "30",
-        "inquiry_label": "Wholesale inquiry only",
-        "sort_featured": "Sort by: Featured",
-        "cta_title": "Looking for Custom Products?",
-        "cta_text": "We provide OEM & ODM services to bring your ideas to life.",
-        "cta_button": "Learn More",
-        "empty_text": "Products will appear here as you add them in Shopify.",
-        "show_seo": false,
-        "seo_title": "Silicone Products for Wholesale & OEM",
-        "seo_text": "Source silicone products for wholesale distribution, retail programs, private label and custom development. Contact our team for product specifications, MOQ, packaging, branding and bulk pricing."
-      }
-    },
-    "collection_catalog_40": {
-      "type": "collection-catalog",
-      "settings": {
-        "categories_title": "Product Categories",
-        "showing_label": "Showing",
-        "products_label": "products",
-        "per_page_label": "Products per page:",
-        "products_per_page": "40",
-        "inquiry_label": "Wholesale inquiry only",
-        "sort_featured": "Sort by: Featured",
-        "cta_title": "Looking for Custom Products?",
-        "cta_text": "We provide OEM & ODM services to bring your ideas to life.",
-        "cta_button": "Learn More",
-        "empty_text": "Products will appear here as you add them in Shopify.",
-        "show_seo": false,
         "seo_title": "Silicone Products for Wholesale & OEM",
         "seo_text": "Source silicone products for wholesale distribution, retail programs, private label and custom development. Contact our team for product specifications, MOQ, packaging, branding and bulk pricing."
       }
@@ -79,8 +38,6 @@
   },
   "order": [
     "collection_hero",
-    "collection_catalog_20",
-    "collection_catalog_30",
-    "collection_catalog_40"
+    "collection_catalog"
   ]
 }

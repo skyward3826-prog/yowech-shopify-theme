@@ -40,8 +40,18 @@
     "solutions": {
       "type": "home-solutions",
       "settings": {
+        "oem_eyebrow": "ABOUT YOWECH",
+        "oem_heading": "Your Silicone Product Partner in YOWECH",
+        "oem_text": "YOWECH is a Dongguan-based silicone products supplier serving wholesalers, retailers, distributors and brands worldwide",
+        "oem_note": "From everyday silicone products to custom sourcing projects, we help businesses build a broader and more flexible product offering",
         "oem_image": "shopify://shop_images/10-oem-odm.png",
-        "wholesale_image": "shopify://shop_images/11-wholesale-supply.png"
+        "oem_image_alt": "Silicone product OEM and ODM development",
+        "wholesale_eyebrow": "BUILT FOR WHOLESALE",
+        "wholesale_heading": "More Products. More Flexibility. One Supplier",
+        "wholesale_text": "Source across multiple silicone categories through one supply partner, with support for bulk orders, OEM / ODM, private label and custom requirements",
+        "wholesale_note": "Simplify sourcing. Expand your product range. Grow with confidence",
+        "wholesale_image": "shopify://shop_images/11-wholesale-supply.png",
+        "wholesale_image_alt": "Silicone products wholesale supply warehouse"
       }
     },
     "cta": {

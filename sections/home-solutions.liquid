@@ -1,15 +1,15 @@
 <section class="home-solutions">
   <div class="home-solution home-solution--oem">
     <div class="home-solution-copy">
-      <p class="eyebrow">OEM &amp; ODM</p>
-      <h2>From Idea to Product</h2>
-      <p>Turn your ideas into high-quality silicone products with our professional OEM &amp; ODM services.</p>
+      {% if section.settings.oem_eyebrow != blank %}<p class="eyebrow">{{ section.settings.oem_eyebrow }}</p>{% endif %}
+      {% if section.settings.oem_heading != blank %}<h2>{{ section.settings.oem_heading | newline_to_br }}</h2>{% endif %}
+      {% if section.settings.oem_text != blank %}<p>{{ section.settings.oem_text }}</p>{% endif %}
       <div class="home-solution-line"></div>
-      <p class="home-solution-note">Custom design. Your brand. Our expertise.</p>
+      {% if section.settings.oem_note != blank %}<p class="home-solution-note">{{ section.settings.oem_note }}</p>{% endif %}
     </div>
     <div class="home-solution-media">
       {% if section.settings.oem_image != blank %}
-        {{ section.settings.oem_image | image_url: width: 1000 | image_tag: widths: '500,700,1000', loading: 'lazy', alt: 'Silicone product OEM and ODM development' }}
+        {{ section.settings.oem_image | image_url: width: 1000 | image_tag: widths: '500,700,1000', loading: 'lazy', alt: section.settings.oem_image_alt | default: 'Silicone product OEM and ODM development' | escape }}
       {% else %}
         <div class="image-placeholder"><span>Add OEM / ODM image</span></div>
       {% endif %}
@@ -19,17 +19,17 @@
   <div class="home-solution home-solution--wholesale">
     <div class="home-solution-media">
       {% if section.settings.wholesale_image != blank %}
-        {{ section.settings.wholesale_image | image_url: width: 1000 | image_tag: widths: '500,700,1000', loading: 'lazy', alt: 'Silicone products wholesale supply warehouse' }}
+        {{ section.settings.wholesale_image | image_url: width: 1000 | image_tag: widths: '500,700,1000', loading: 'lazy', alt: section.settings.wholesale_image_alt | default: 'Silicone products wholesale supply warehouse' | escape }}
       {% else %}
         <div class="image-placeholder"><span>Add wholesale image</span></div>
       {% endif %}
     </div>
     <div class="home-solution-copy">
-      <p class="eyebrow">WHOLESALE SUPPLY</p>
-      <h2>Flexible Supply<br>for Your Business</h2>
-      <p>We support bulk orders with stable quality, reliable production and global shipping.</p>
+      {% if section.settings.wholesale_eyebrow != blank %}<p class="eyebrow">{{ section.settings.wholesale_eyebrow }}</p>{% endif %}
+      {% if section.settings.wholesale_heading != blank %}<h2>{{ section.settings.wholesale_heading | newline_to_br }}</h2>{% endif %}
+      {% if section.settings.wholesale_text != blank %}<p>{{ section.settings.wholesale_text }}</p>{% endif %}
       <div class="home-solution-line"></div>
-      <p class="home-solution-note">Grow your business with a trusted partner.</p>
+      {% if section.settings.wholesale_note != blank %}<p class="home-solution-note">{{ section.settings.wholesale_note }}</p>{% endif %}
     </div>
   </div>
 </section>
@@ -38,8 +38,21 @@
 {
   "name": "OEM & wholesale solutions",
   "settings": [
+    { "type": "header", "content": "OEM & ODM" },
+    { "type": "text", "id": "oem_eyebrow", "label": "Eyebrow", "default": "OEM & ODM" },
+    { "type": "text", "id": "oem_heading", "label": "Heading", "default": "From Idea to Product" },
+    { "type": "textarea", "id": "oem_text", "label": "Description", "default": "Turn your ideas into high-quality silicone products with our professional OEM & ODM services." },
+    { "type": "text", "id": "oem_note", "label": "Bottom note", "default": "Custom design. Your brand. Our expertise." },
     { "type": "image_picker", "id": "oem_image", "label": "OEM & ODM image" },
-    { "type": "image_picker", "id": "wholesale_image", "label": "Wholesale supply image" }
+    { "type": "text", "id": "oem_image_alt", "label": "OEM image alt text", "default": "Silicone product OEM and ODM development" },
+
+    { "type": "header", "content": "Wholesale Supply" },
+    { "type": "text", "id": "wholesale_eyebrow", "label": "Eyebrow", "default": "WHOLESALE SUPPLY" },
+    { "type": "text", "id": "wholesale_heading", "label": "Heading", "default": "Flexible Supply for Your Business" },
+    { "type": "textarea", "id": "wholesale_text", "label": "Description", "default": "We support bulk orders with stable quality, reliable production and global shipping." },
+    { "type": "text", "id": "wholesale_note", "label": "Bottom note", "default": "Grow your business with a trusted partner." },
+    { "type": "image_picker", "id": "wholesale_image", "label": "Wholesale supply image" },
+    { "type": "text", "id": "wholesale_image_alt", "label": "Wholesale image alt text", "default": "Silicone products wholesale supply warehouse" }
   ],
   "presets": [{ "name": "OEM & wholesale solutions" }]
 }

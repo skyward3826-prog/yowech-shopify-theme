@@ -68,6 +68,19 @@
             "show_arrow": true
           }
         },
+        "method_wechat": {
+          "type": "method",
+          "settings": {
+            "icon": "",
+            "fallback": "微信",
+            "label": "WECHAT",
+            "title": "WeChat",
+            "text": "Add us on WeChat: +86 139 2290 7202",
+            "link": "#wechat-copy",
+            "new_tab": false,
+            "show_arrow": true
+          }
+        },
         "method_Awm6Gh": {
           "type": "method",
           "settings": {
@@ -98,6 +111,7 @@
       "block_order": [
         "method_LMpfeG",
         "method_49jHi9",
+        "method_wechat",
         "method_Awm6Gh",
         "method_Q3rMQF"
       ],

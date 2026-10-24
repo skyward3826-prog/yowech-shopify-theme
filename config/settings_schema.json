@@ -1,5 +1,5 @@
 [
-  {"name":"Branding","settings":[{"type":"image_picker","id":"logo","label":"Logo"}]},
+  {"name":"Branding","settings":[{"type":"image_picker","id":"logo","label":"Logo"},{"type":"image_picker","id":"favicon","label":"Favicon (browser tab icon)","info":"Upload a square PNG image, ideally 32 × 32 px or larger."}]},
   {"name":"Business Information","settings":[{"type":"text","id":"business_label","label":"Business label","default":"Global Silicone Products Wholesale"},{"type":"textarea","id":"footer_description","label":"Footer description","default":"Global silicone products wholesale, OEM, ODM and private label solutions for B2B buyers."}]},
   {"name":"Contact & Social","settings":[{"type":"text","id":"email","label":"Business email","default":"sales@example.com"},{"type":"url","id":"whatsapp_url","label":"WhatsApp URL"},{"type":"url","id":"facebook_url","label":"Facebook URL"},{"type":"url","id":"linkedin_url","label":"LinkedIn URL"}]}
 ]

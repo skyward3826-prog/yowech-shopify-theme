@@ -68,27 +68,14 @@
             "show_arrow": true
           }
         },
-        "method_wechat": {
-          "type": "method",
-          "settings": {
-            "icon": "",
-            "fallback": "微信",
-            "label": "WECHAT",
-            "title": "WeChat",
-            "text": "Add us on WeChat: +86 139 2290 7202",
-            "link": "#wechat-copy",
-            "new_tab": false,
-            "show_arrow": true
-          }
-        },
         "method_Awm6Gh": {
           "type": "method",
           "settings": {
-            "icon": "shopify://shop_images/5e523aad-4f13-452e-bc61-24c50dc9954d.png",
+            "icon": "shopify://shop_images/347247566_252012790801567_7614434377698641788_n.jpg",
             "fallback": "",
             "label": "",
-            "title": "Facebook",
-            "text": "Visit our social media accounts",
+            "title": "WeChat",
+            "text": "ID:elsayou01",
             "link": "",
             "new_tab": true,
             "show_arrow": true
@@ -96,6 +83,7 @@
         },
         "method_Q3rMQF": {
           "type": "method",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/2b699022-0cd6-40dc-994c-84d8b9d59d87.png",
             "fallback": "",
@@ -112,8 +100,7 @@
         "method_LMpfeG",
         "method_49jHi9",
         "method_Awm6Gh",
-        "method_Q3rMQF",
-        "method_wechat"
+        "method_Q3rMQF"
       ],
       "settings": {}
     }
